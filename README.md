@@ -69,7 +69,7 @@ Restart iTerm.
 ```
 brew install lsd
 ```
-Uncomment the LSD aliases in your `~/.zshrc`
+Uncomment the LSD aliases in your `~/.zshrc` or add them if you have an existing `.zshrc`.
 ```
 alias ls='lsd'
 alias l='ls -l'
