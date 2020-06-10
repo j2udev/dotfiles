@@ -117,6 +117,12 @@ source $ZSH/oh-my-zsh.sh
 alias src="source ~/.zshrc"
 alias zim="vim ~/.zshrc"
 alias record="termtosvg -t ~/dotfiles/termtosvg-templates/p10k-template.svg"
+# Uncomment the below if using LSD
+# alias ls='lsd'
+# alias l='ls -l'
+# alias la='ls -a'
+# alias lla='ls -la'
+# alias lt='ls --tree'
 
 ## OSX Specific - Toogle Show/Hide Hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
