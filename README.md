@@ -1,10 +1,13 @@
 # Dotfiles
 
+
 ## [iTerm2](https://www.iterm2.com/)
 
 ```
 brew cask install iterm2
 ```
+Import the desired iterm profile theme from the `dotfiles/iterm-profiles` folder.  
+You will need to update the font after installing Nerd Fonts in subsequent steps.
 
 ## [Oh My Zsh](https://ohmyz.sh/)
 
@@ -16,6 +19,27 @@ Copy the `.zshrc` file to your home directory.
 Modify the path in the `.zshrc` to be:
 ```
 export ZSH="/Users/<YOUR_USER>/.oh-my-zsh"
+```
+
+## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+Set your `ZSH_THEME` variable as: 
+```
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+If you are using an existing `.zshrc` rather than the one in this repo, you will need to add the following to your copy:
+```
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+```
+
+Copy the desired theme from the `dotfiles/p10k-themes` folder to the home directory.
+
+```
+cp -r ./<CHOSEN_THEME.zsh> ~/.p10k.zsh
 ```
 
 ## [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
@@ -30,7 +54,7 @@ brew cask install font-hack-nerd-font
 If you choose this option, you'll need to manually set the font in your iTerm preferences.
 Open iTerm preferences with `cmd + ,` and go to  
 Profiles -> Text -> Font  
-and select `Heck Nerd Font Mono` from the dropdown.
+and select `Hack Nerd Font Mono` from the dropdown.
 
 To let the p10k configuration wizard install run the below and follow the prompt until it installs the needed fonts:
 ```
@@ -51,12 +75,4 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-```
-
-## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-
-Copy the desired theme from the `p10k-themes` folder to the home directory.
-
-```
-cp -r ./<CHOSEN_THEME.zsh> ~/.p10k.zsh
 ```
