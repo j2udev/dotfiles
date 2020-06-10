@@ -52,15 +52,15 @@ brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 ```
 If you choose this option, you'll need to manually set the font in your iTerm preferences.
-Open iTerm preferences with `cmd + ,` and go to  
-Profiles -> Text -> Font  
-and select `Hack Nerd Font Mono` from the dropdown.
+Open iTerm preferences with `cmd + ,` and go to Profiles -> Text -> Font  
+Select `Hack Nerd Font Mono` from the dropdown.
 
-To let the p10k configuration wizard install run the below and follow the prompt until it installs the needed fonts:
+To let the p10k configuration wizard do the font installation, run the below and follow the prompt until it installs the needed fonts:
+> Note: you do not need to go through the entire configuration wizard.  Simply answer yes when prompted about installing the `MesloLGS NF` font.
 ```
 p10k configure
 ```
-If you choose this option, the `MesloLGS NF` will be automatically selected from the font dropdown.  Either of the above fonts will work well. 
+If you choose this option, the `MesloLGS NF` should be automatically selected from the font dropdown.  Either of the above fonts will work well. 
 
 Restart iTerm.
 
