@@ -1,0 +1,16 @@
+[record]
+
+; Define hotkey for pausing recording (suspending capture of output),
+; default: C-\
+pause_key = C-p
+
+; Limit recorded terminal inactivity to max n seconds, default: off
+idle_time_limit = 2
+
+[play]
+
+; Playback speed (can be fractional), default: 1
+speed = 2
+
+; Limit replayed terminal inactivity to max n seconds, default: off
+idle_time_limit = 1

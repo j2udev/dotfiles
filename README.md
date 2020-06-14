@@ -6,7 +6,7 @@
 ```
 brew cask install iterm2
 ```
-Import the desired iterm profile theme from the `dotfiles/iterm-profiles` folder.  
+Import the desired iterm profile theme from the `dotfiles/iterm` folder.  
 You will need to update the font after installing Nerd Fonts in subsequent steps.
 
 ## [Oh My Zsh](https://ohmyz.sh/)
@@ -14,7 +14,7 @@ You will need to update the font after installing Nerd Fonts in subsequent steps
 ```
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-Copy the `.zshrc` file to your home directory.
+Copy the `zsh/.zshrc` file to your home directory.
 
 Modify the path in the `.zshrc` to be:
 ```
@@ -36,7 +36,7 @@ If you are using an existing `.zshrc` rather than the one in this repo, you will
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 ```
 
-Copy the desired theme from the `dotfiles/p10k-themes` folder to the home directory.
+Copy the desired theme from the `dotfiles/p10k` folder to the home directory.
 
 ```
 cp -r ./<CHOSEN_THEME.zsh> ~/.p10k.zsh
@@ -69,7 +69,7 @@ Restart iTerm.
 ```
 brew install lsd
 ```
-Uncomment the LSD aliases in your `~/.zshrc` or add them if you have an existing `.zshrc`.
+Uncomment the LSD aliases in the `~/.zshrc` or add them if you have an existing `.zshrc`.
 ```
 alias ls='lsd'
 alias l='ls -l'
