@@ -9,6 +9,10 @@ brew cask install iterm2
 Import the desired iterm profile theme from the `dotfiles/iterm` folder.  
 You will need to update the font after installing Nerd Fonts in subsequent steps.
 
+The iTerm profiles in this repository take advantage of natural text editing.  This means that you can jump forward and backward using the option key.  You can combine these jumps with delete or backspace.  You can also jump to the beginning of the line with cmd + &#8592;
+
+![iTerm](iterm/iterm-natural-text-editing.gif)
+
 ## [Oh My Zsh](https://ohmyz.sh/)
 
 ```
