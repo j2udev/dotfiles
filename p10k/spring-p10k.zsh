@@ -722,7 +722,7 @@
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND='white'
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND='blue'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND='dodgerblue2'
   # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext
@@ -775,7 +775,7 @@
   ###############################[ public_ip: public IP address ]###############################
   # Public IP color.
   typeset -g POWERLEVEL9K_PUBLIC_IP_FOREGROUND='white'
-  typeset -g POWERLEVEL9K_PUBLIC_IP_BACKGROUND='blue'
+  typeset -g POWERLEVEL9K_PUBLIC_IP_BACKGROUND='dodgerblue2'
   # Custom icon.
   # typeset -g POWERLEVEL9K_PUBLIC_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
