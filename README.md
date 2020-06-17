@@ -81,3 +81,8 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 ```
+
+## [FZF (command-line fuzzy finder)](https://github.com/junegunn/fzf)
+```
+brew install fzf
+```
