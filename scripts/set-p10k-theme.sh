@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 set -e
 
 P10K_PROFILE=$1
@@ -9,11 +9,11 @@ END_OF_COLOR="\033[0m"
 
 cd "$(dirname "$BASH_SOURCE")"
 
-# This will backup any existing .p10k.zsh files to the 
+# This will backup any existing .p10k.zsh files to the
 [[ -f ~/.p10k.zsh ]] && mv ~/.p10k.zsh ~/.p10k_backup.zsh
 
-case $P10K_PROFILE in 
-  1 ) 
+case $P10K_PROFILE in
+  1 )
     echo -e $WHITE_ON_GREEN"Setting Spring Powerlevel10k Theme..."$END_OF_COLOR;
     cp ../p10k/spring-p10k.zsh ~/.p10k.zsh
     ;;
@@ -23,5 +23,5 @@ case $P10K_PROFILE in
     ;;
   * )
     echo -e $WHITE_ON_GREEN"Unrecognized Option"$END_OF_COLOR;
-    ;;    
+    ;;
 esac
