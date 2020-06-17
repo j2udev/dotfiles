@@ -21,12 +21,10 @@ plugins=(git
          fzf
          terraform)
 
-
 source $ZSH/oh-my-zsh.sh
 
 # Set fzf installation directory path
 export FZF_BASE=/usr/local/opt/fzf/install
-
 # Appends every command to the history file once it is executed
 unsetopt inc_append_history
 # Reloads the history whenever you use it
@@ -110,9 +108,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ## General
 alias src="source ~/.zshrc"
 alias zim="vim ~/.zshrc"
-alias record="termtosvg -t ~/dotfiles/termtosvg/p10k-template.svg"
+alias record="termtosvg -t ~/dotfiles/terminal-recorders/termtosvg/p10k-template.svg"
 alias arec="asciinema rec"
 alias aplay="asciinema play"
+
 # Uncomment the below if using LSD
 # alias ls='lsd'
 # alias l='ls -l'
@@ -135,9 +134,10 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME; java -version'
 alias mk='minikube'
 alias mks='minikube service'
 alias mkdd='eval $(minikube docker-env)'
+alias mkddu='eval $(minikube docker-env -u)'
 
 ## Kubernetes
-autoload -U compinit && compinit #used to enable kubectx and kubens autocompletion
+autoload -U compinit && compinit
 export KUBECONFIG=~/.kube/config
 alias wkgp='watch kubectl get pods -A'
 alias kgpw='kubectl get pods -A -w'
@@ -163,6 +163,9 @@ alias dnls='docker network ls'
 
 ## Terraform
 alias tf="terraform"
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
 alias tfwl="terraform workspace list"
 alias tfws="terraform workspace select"
 
