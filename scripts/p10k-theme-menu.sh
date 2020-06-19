@@ -2,7 +2,6 @@
 set -e
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
-# shellcheck disable=SC2034
 WHITE_ON_GREEN="\033[37;42m"
 WHITE_ON_RED="\033[37;41m"
 END_OF_COLOR="\033[0m"
