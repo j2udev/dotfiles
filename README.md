@@ -1,5 +1,7 @@
 # Dotfiles
 
+![Lint Code Base](https://github.com/j2udevelopment/dotfiles/workflows/Lint%20Code%20Base/badge.svg)
+
 #### [iTerm2](https://www.iterm2.com/)
 
 ```bash
