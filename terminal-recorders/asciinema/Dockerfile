@@ -1,4 +1,4 @@
-FROM asciinema/asciicast2gif
+FROM asciinema/asciicast2gif:latest
 
 WORKDIR /usr/share/fonts/truetype
 
