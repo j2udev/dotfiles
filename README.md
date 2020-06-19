@@ -1,6 +1,6 @@
 # Dotfiles
 
-### [iTerm2](https://www.iterm2.com/)
+#### [iTerm2](https://www.iterm2.com/)
 
 ```bash
 brew cask install iterm2
