@@ -48,4 +48,4 @@ jobs:
           VALIDATE_YAML: true
           VALIDATE_MD: true
           VALIDATE_BASH: true
-          VALIDATE_DOCKER: true
+          VALIDATE_DOCKER: false
