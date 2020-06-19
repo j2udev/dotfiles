@@ -7,7 +7,7 @@ WHITE_ON_GREEN="\033[37;42m"
 WHITE_ON_RED="\033[37;41m"
 END_OF_COLOR="\033[0m"
 
-cd "$(dirname "$BASH_SOURCE[0]")"
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
 # This will backup any existing .p10k.zsh files to the
 [[ -f ~/.p10k.zsh ]] && mv ~/.p10k.zsh ~/.p10k_backup.zsh

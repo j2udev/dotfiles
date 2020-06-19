@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd "$(dirname "$BASH_SOURCE[0]")"
+cd "$(dirname "${BASH_SOURCE[0]}")"
 # shellcheck disable=SC2034
 WHITE_ON_GREEN="\033[37;42m"
 WHITE_ON_RED="\033[37;41m"
@@ -13,7 +13,7 @@ read -r P10K_PROFILE
 
 case $P10K_PROFILE in
   1|2 )
-    ./set-p10k-theme.sh $P10K_PROFILE
+    ./set-p10k-theme.sh "$P10K_PROFILE"
     ;;
   3 )
     echo -e "$WHITE_ON_GREEN""Quitting...""$END_OF_COLOR";
