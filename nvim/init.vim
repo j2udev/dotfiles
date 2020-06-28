@@ -68,6 +68,7 @@ nnoremap <leader>1 :set number! relativenumber!<CR>
 nnoremap <leader>2 :set hlsearch!<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
+nnoremap <C-a> :%y+<CR>
 nnoremap <leader>D :bd<CR>
 nnoremap <leader>sh :wincmd s<CR>
 nnoremap <leader>sv :wincmd v<CR>
