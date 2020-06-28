@@ -49,6 +49,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_section_y = ""
+
+let NERDTreeShowHidden=1
+let g:NERDTreeShowLineNumbers=1
+autocmd BufEnter NERD_* setlocal rnu
+
 colorscheme gruvbox
 set background=dark
 
@@ -117,6 +122,8 @@ nnoremap <leader>cr :CocRestart
 
 " Fugitive
 nmap <leader>gs :G<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gp :Gpush<CR>
 
 " FZF file preview
 "command! -bang -nargs=? -complete=dir Files
