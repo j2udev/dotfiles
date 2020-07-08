@@ -1,5 +1,7 @@
-# [Asciinema](https://github.com/asciinema/asciinema) Setup
+# Asciinema
 
-# [Asciicast2Gif](https://github.com/asciinema/asciicast2gif) Setup
+## [Asciinema](https://github.com/asciinema/asciinema) Setup
 
-# [Asciinema Player](https://github.com/asciinema/asciinema-player) Setup
+## [Asciicast2Gif](https://github.com/asciinema/asciicast2gif) Setup
+
+## [Asciinema Player](https://github.com/asciinema/asciinema-player) Setup
