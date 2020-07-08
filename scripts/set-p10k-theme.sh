@@ -9,7 +9,7 @@ END_OF_COLOR="\033[0m"
 
 cd "$(dirname "$BASH_SOURCE")"
 
-# This will backup any existing .p10k.zsh files to the
+# This will backup any existing .p10k.zsh files to a .p10k_backup.zsh file
 [[ -f ~/.p10k.zsh ]] && mv ~/.p10k.zsh ~/.p10k_backup.zsh
 
 case $P10K_PROFILE in
