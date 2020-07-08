@@ -1,3 +1,4 @@
+# For more zsh configuration variables visit https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 [[ -f $HOME/.p10k.zsh ]] && source $HOME/.p10k.zsh
