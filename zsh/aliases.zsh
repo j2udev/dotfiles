@@ -1,5 +1,7 @@
 # General
 alias src='source $HOME/.zshrc'
+alias vi="nvim"
+alias vim="nvim"
 alias zim='vim $HOME/.zshrc'
 alias dim='vim $HOME/dotfiles/zsh/.zshrc'
 alias dima='vim $HOME/dotfiles/zsh/aliases.zsh'
