@@ -1,15 +1,15 @@
-export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
 # Vim
-export MYVIMRC='$HOME/.config/nvim/init.vim'
-export XDG_CONFIG_HOME='$HOME/.config'
+export MYVIMRC="$HOME/.config/nvim/init.vim"
+export XDG_CONFIG_HOME="$HOME/.config"
 # Kubernetes
 export KUBECONFIG="$HOME/.kube/config"
 export KUBE_EDITOR="nvim"
 # FZF
 export FZF_BASE=/usr/local/opt/fzf/install
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
 # AWS
 export AWS_SDK_LOAD_CONFIG=true
 # Java

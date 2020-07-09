@@ -39,6 +39,8 @@ alias kd='kubectl describe'
 alias ke='kubectl edit'
 alias netshoot='kubectl run --rm --generator=run-pod/v1 networking-shell -i --tty --image nicolaka/netshoot -- /bin/bash'
 alias krmevictions='kubectl get pods -A | grep Evicted | awk '{print \$2}' | xargs -L1 kubectl delete pods'
+alias ktx='kubectx'
+alias kns='kubens'
 
 # Docker
 alias doc='docker'
