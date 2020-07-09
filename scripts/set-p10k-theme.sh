@@ -20,8 +20,8 @@ case $P10K_PROFILE in
     cp ../p10k/wvu-p10k.zsh ~/.p10k.zsh
     ;;
   3 )
-    echo -e "$WHITE_ON_GREEN""Setting 'Merica Powerlevel10k Theme...""$END_OF_COLOR";
-    cp ../p10k/merica-p10k.zsh ~/.p10k.zsh
+    echo -e "$WHITE_ON_GREEN""Setting USA Powerlevel10k Theme...""$END_OF_COLOR";
+    cp ../p10k/usa-p10k.zsh ~/.p10k.zsh
     ;;
   * )
     echo -e "$WHITE_ON_GREEN""Unrecognized Option""$END_OF_COLOR";
