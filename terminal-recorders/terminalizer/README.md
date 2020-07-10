@@ -1,1 +1,0 @@
-# [Terminalizer](https://github.com/faressoft/terminalizer) Setup

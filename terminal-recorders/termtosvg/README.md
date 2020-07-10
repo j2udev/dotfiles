@@ -1,1 +1,0 @@
-# [Termtosvg](https://github.com/nbedos/termtosvg) Setup
