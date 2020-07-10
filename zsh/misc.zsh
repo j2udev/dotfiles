@@ -2,5 +2,5 @@
 unsetopt inc_append_history
 # Reloads the history whenever you use it
 unsetopt share_history
-# Enables completion
+# Enables auto-completion
 autoload -U compinit && compinit
