@@ -18,5 +18,4 @@ plugins=(
     autojump
     jira
     fancy-ctrl-z
-    zsh-completions
 )
