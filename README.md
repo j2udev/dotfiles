@@ -17,7 +17,7 @@ This means that you can jump forward and backward using the option key. You can
 combine these jumps with delete or backspace. You can also jump to the beginning
 of the line with cmd + &#8592;
 
-![iTerm](iterm/iterm-natural-text-editing.gif)
+![iTerm](assets/iterm-natural-text-editing.gif)
 
 ## [Oh My Zsh](https://ohmyz.sh/)
 
