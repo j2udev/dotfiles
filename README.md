@@ -5,7 +5,7 @@
 Clone this repo to your `$HOME` directory as it relies on that fact in order to
 source different files in `dotfiles/zsh/.zshrc`.
 
-```bash
+```zsh
 cd $HOME && git clone https://github.com/j2udevelopment/dotfiles.git
 ```
 
@@ -27,7 +27,7 @@ alias foobar="foo bar"
 
 ## [iTerm2](https://www.iterm2.com/)
 
-```bash
+```zsh
 brew cask install iterm2
 ```
 
@@ -48,16 +48,15 @@ in `dotfiles/zsh/plugins.zsh`. This plugin adds vi keybinds to the command line.
 
 ## [Oh My Zsh](https://ohmyz.sh/)
 
-```bash
+```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Copy the `zsh/.zshrc` file to your home directory.
+Create your own `$HOME/.zshrc` file and add the following block as previously
+mentioned:
 
-Modify the path in the `.zshrc` to be:
-
-```bash
-export ZSH="/Users/<YOUR_USER>/.oh-my-zsh"
+```zsh
+[[ -f $HOME/dotfiles/zsh/.zshrc ]] && source $HOME/dotfiles/zsh/.zshrc
 ```
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
@@ -72,18 +71,17 @@ Set your `ZSH_THEME` variable as:
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
-If you are using an existing `.zshrc` rather than the one in this repo, you will
-need to add the following to your copy:
+Run the following function defined in `dotfiles/zsh/functions.zsh` to set a
+preconfigured Powerlevel10k command prompt:
 
-```bash
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+```zsh
+prompt-theme
 ```
 
-Copy the desired theme from the `dotfiles/p10k` folder to the home directory.
+or run the following in order to use the Powerlevel10k configuration wizard:
 
-```bash
-cp -r ./<CHOSEN_THEME.zsh> ~/.p10k.zsh
+```zsh
+p10k configure
 ```
 
 ## [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
@@ -115,7 +113,7 @@ p10k configure
 ```
 
 If you choose this option, the `MesloLGS NF` should be automatically selected
-from the font dropdown. Either of the above fonts will work well.
+from the font dropdown. Either of the above font packages will work well.
 
 Restart iTerm.
 
