@@ -26,7 +26,15 @@ alias foobar="foo bar"
 ...
 ```
 
+After sourcing my `dotfiles/zsh/.zshrc` as shown above, source your `$HOME/.zshrc` for the changes to take effect.
+
+```zsh
+source ~/.zshrc
+```
+
 ## [iTerm2](https://www.iterm2.com/)
+
+iTerm is my terminal of choice. You can install it with:
 
 ```zsh
 brew cask install iterm2
@@ -38,16 +46,19 @@ You will need to update the font after installing Nerd Fonts in subsequent
 steps.
 
 The iTerm profiles in this repository take advantage of natural text editing.
-This means that you can jump forward and backward using the option key. You can
-combine these jumps with delete or backspace. You can also jump to the beginning
-or end of a line with cmd + &#8592; or &#8594; respectively.  
-This will only work if you remove the
+You can jump backward or forward by a word with option + &#8592; or &#8594;
+respectively. You can jump to the beginning or end of a line with cmd + &#8592;
+or &#8594; respectively. You can combine these jumps with delete or backspace.
+The aformentioned movements will only work if you remove the
 [vi-mode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode) plugin
 in `dotfiles/zsh/plugins.zsh`. This plugin adds vi keybinds to the command line.
 
 ![iTerm](assets/iterm-natural-text-editing.gif)
 
 ## [Oh My Zsh](https://ohmyz.sh/)
+
+Oh My Zsh is a framework for managing Zsh configuration. It also has an easy to
+use plugin system. You can install it with:
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -62,14 +73,10 @@ mentioned:
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
+Powerlevel10k is the best command prompt theme for Zsh.  Change my mind.  You can install it with:
+
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-Set your `ZSH_THEME` variable as:
-
-```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 Run the following function defined in `dotfiles/zsh/functions.zsh` to set a
@@ -120,28 +127,29 @@ Restart iTerm.
 
 ## [LSD(LSDeluxe)](https://github.com/Peltoche/lsd)
 
+LSD is a pretty nifty tool that adds symbols to directories, files, etc.  It makes use of the aforementioned Nerd Fonts.  You can install it with:
+
 ```zsh
 brew install lsd
 ```
 
-Uncomment the LSD aliases in the `~/.zshrc` or add them if you have an existing
-`.zshrc`.
-
-```zsh
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-```
-
 ## [FZF (command-line fuzzy finder)](https://github.com/junegunn/fzf)
+
+FZF is an awesome command line fuzzy finder that can be using in a variety of ways.  I most often use it for searching my command history, but you can use it for so much more.  You can pipe any command with output to FZF.  I also make use of this tool in Vim.  You can install it with:
 
 ```zsh
 brew install fzf
 ```
 
 ## [Autojump](https://github.com/wting/autojump)
+
+Autojump is an awesome tool that remembers the directories that you've visited and allows you to revisit them without typing out the entire path. For example, if I've visited the `/foo/bar/baz` directory in the past and quickly want to jump back to it, I can simply run:
+
+```zsh
+j baz
+```
+
+You can install Autojump with
 
 ```zsh
 brew install autojump
