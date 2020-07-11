@@ -2,20 +2,26 @@
 
 ![Lint Code Base](https://github.com/j2udevelopment/dotfiles/workflows/Lint%20Code%20Base/badge.svg)
 
+Clone this repo to your `$HOME` directory as it relies on that fact in order to source different files in `dotfiles/zsh/.zshrc`.
+```bash
+git clone https://github.com/j2udevelopment/dotfiles.git $HOME
+```
+
 ## [iTerm2](https://www.iterm2.com/)
 
 ```bash
 brew cask install iterm2
 ```
 
-Import the desired iterm profile theme from the `dotfiles/iterm` folder.  
+Import the desired iterm profile theme from the `dotfiles/iterm/profiles` folder.  
 You will need to update the font after installing Nerd Fonts in subsequent
 steps.
 
 The iTerm profiles in this repository take advantage of natural text editing.
 This means that you can jump forward and backward using the option key. You can
-combine these jumps with delete or backspace. You can also jump to the beginning
-of the line with cmd + &#8592;
+combine these jumps with delete or backspace. You can also jump to the beginning or end
+of a line with cmd + &#8592; or &#8594; respectively.  
+This will only work if you remove the [vi-mode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode) plugin in `dotfiles/zsh/plugins.zsh`. This plugin adds vi keybinds to the command line.
 
 ![iTerm](assets/iterm-natural-text-editing.gif)
 
