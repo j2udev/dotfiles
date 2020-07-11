@@ -2,7 +2,7 @@
 
 git filter-branch --env-filter '
 
-OLD_EMAIL="joshua.l.ward@leidos.com"
+OLD_EMAIL="j2udevelopment@gmail.com"
 CORRECT_NAME="Joshua Ward"
 CORRECT_EMAIL="j2udevelopment@gmail.com"
 
