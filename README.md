@@ -18,11 +18,12 @@ An example of a `$HOME/.zshrc` file for a work machine:
 ```zsh
 [[ -f $HOME/dotfiles/zsh/.zshrc ]] && source $HOME/dotfiles/zsh/.zshrc
 
-### Proprietary Exports ###
+### Exports with potentialy proprietary information ###
 export FOOBAR="/foo/bar"
-### Proprietary Aliases ###
+### Aliases with potentialy proprietary information ###
 alias foobar="foo bar"
-### Other Proprietary Information ###
+### Other potentially proprietary information ###
+...
 ```
 
 ## [iTerm2](https://www.iterm2.com/)
