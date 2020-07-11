@@ -12,8 +12,7 @@ cd $HOME && git clone https://github.com/j2udevelopment/dotfiles.git
 When using this repo on a work machine, I keep a `$HOME/.zshrc` that sources my
 `$HOME/dotfiles/zsh/.zshrc`. This allows me to add any aliases, exports, etc
 that may contain proprietary information without impacting my open source
-dotfiles.  
-An example of a `$HOME/.zshrc` file for a work machine:
+dotfiles. An example of a `$HOME/.zshrc` file for a work machine:
 
 ```zsh
 [[ -f $HOME/dotfiles/zsh/.zshrc ]] && source $HOME/dotfiles/zsh/.zshrc
@@ -51,8 +50,8 @@ in `dotfiles/zsh/plugins.zsh`. This plugin adds vi keybinds to the command line.
 
 ## [Oh My Zsh](https://ohmyz.sh/)
 
-Oh My Zsh is a framework for managing Zsh configuration. It also has an easy to
-use plugin system. You can install it with:
+Oh My Zsh is a framework for managing Zsh configuration and has an easy-to-use
+plugin system. You can install it with:
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -60,7 +59,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
-Powerlevel10k is the best command prompt theme for Zsh.  Change my mind.  You can install it with:
+Powerlevel10k is the best command prompt theme for Zsh. Change my mind. You can
+install it with:
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -114,7 +114,8 @@ Restart iTerm.
 
 ## [LSD(LSDeluxe)](https://github.com/Peltoche/lsd)
 
-LSD is a pretty nifty tool that adds symbols to directories, files, etc.  It makes use of the aforementioned Nerd Fonts.  You can install it with:
+LSD is a pretty nifty tool that adds symbols to directories, files, etc. It
+makes use of the aforementioned Nerd Fonts. You can install it with:
 
 ```zsh
 brew install lsd
@@ -122,7 +123,10 @@ brew install lsd
 
 ## [FZF (command-line fuzzy finder)](https://github.com/junegunn/fzf)
 
-FZF is an awesome command line fuzzy finder that can be using in a variety of ways.  I most often use it for searching my command history, but you can use it for so much more.  You can pipe any command with output to FZF.  I also make use of this tool in Vim.  You can install it with:
+FZF is an awesome command line fuzzy finder that can be using in a variety of
+ways. I most often use it for searching my command history, but you can use it
+for so much more. You can pipe any command with output to FZF. I also make use
+of this tool in Vim. You can install it with:
 
 ```zsh
 brew install fzf
@@ -130,7 +134,10 @@ brew install fzf
 
 ## [Autojump](https://github.com/wting/autojump)
 
-Autojump is an awesome tool that remembers the directories that you've visited and allows you to revisit them without typing out the entire path. For example, if I've visited the `/foo/bar/baz` directory in the past and quickly want to jump back to it, I can simply run:
+Autojump is an awesome tool that remembers the directories that you've visited
+and allows you to revisit them without typing out the entire path. For example,
+if I've visited the `/foo/bar/baz` directory in the past and quickly want to
+jump back to it, I can simply run:
 
 ```zsh
 j baz
