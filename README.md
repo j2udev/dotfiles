@@ -26,12 +26,6 @@ alias foobar="foo bar"
 ...
 ```
 
-After sourcing my `dotfiles/zsh/.zshrc` as shown above, source your `$HOME/.zshrc` for the changes to take effect.
-
-```zsh
-source ~/.zshrc
-```
-
 ## [iTerm2](https://www.iterm2.com/)
 
 iTerm is my terminal of choice. You can install it with:
@@ -62,13 +56,6 @@ use plugin system. You can install it with:
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Create your own `$HOME/.zshrc` file and add the following block as previously
-mentioned:
-
-```zsh
-[[ -f $HOME/dotfiles/zsh/.zshrc ]] && source $HOME/dotfiles/zsh/.zshrc
 ```
 
 ## [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
