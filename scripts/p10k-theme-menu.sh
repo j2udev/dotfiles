@@ -17,9 +17,9 @@ case $P10K_PROFILE in
     ./set-p10k-theme.sh "$P10K_PROFILE"
     ;;
   4 )
-    echo "$WHITE_ON_GREEN""Quitting...""$END_OF_COLOR";
+    printf "$WHITE_ON_GREEN%s$END_OF_COLOR\n" "Quitting...";
     exit;;
   * )
-    echo "$WHITE_ON_RED""Unrecognized Option""$END_OF_COLOR";
+    printf "$WHITE_ON_RED%s$END_OF_COLOR\n" "Unrecognized Option";
     exit;;
 esac
