@@ -149,7 +149,7 @@ Autojump is an awesome tool that remembers the directories that you've visited a
 j baz
 ```
 
-You can install Autojump with
+You can install it with
 
 ```zsh
 brew install autojump
