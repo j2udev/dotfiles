@@ -2,11 +2,13 @@
 set -e
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
-WHITE_ON_GREEN="\033[37;42m"
-WHITE_ON_RED="\033[37;41m"
+
+START_OF_COLOR="\033[37;"
+WHITE_ON_GREEN=$START_OF_COLOR"42m"
+WHITE_ON_RED=$START_OF_COLOR"41m"
 END_OF_COLOR="\033[0m"
 
-echo "$WHITE_ON_GREEN""Select a Powerlevel10K Oh My Zsh profile you would like to use:""$END_OF_COLOR""\n1)Spring\n2)WVU\n3)USA\n4)Quit"
+printf "$WHITE_ON_GREEN%s$END_OF_COLOR\n%s\n%s\n%s\n%s\n" "Select a Powerlevel10K Oh My Zsh profile you would like to use:" "1) Spring" "2) WVU" "3) USA" "4) Quit" 
 
 read -r P10K_PROFILE
 
