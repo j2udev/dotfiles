@@ -14,6 +14,11 @@ alias show="defaults write com.apple.finder AppleShowAllFiles YES; killall Finde
 alias hide="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
 alias cat="pygmentize -g"
 
+# Git
+alias gcona='git config user.name "Joshua Ward" ; git config user.email "j2udevelopment@gmail.com"'
+alias gconu='git config --unset user.name ; git config --unset user.email' 
+alias gconl="git config -l"
+
 # LSD
 alias ls="lsd"
 alias l="ls -l"
