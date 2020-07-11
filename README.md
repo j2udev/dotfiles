@@ -92,7 +92,7 @@ configuration wizard do it for you.
 
 To manually install run the below:
 
-```bash
+```zsh
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 ```
@@ -108,7 +108,7 @@ follow the prompt until it installs the needed fonts:
 > Note: you do not need to go through the entire configuration wizard. Simply
 > answer yes when prompted about installing the `MesloLGS NF` font.
 
-```bash
+```zsh
 p10k configure
 ```
 
@@ -119,14 +119,14 @@ Restart iTerm.
 
 ## [LSD(LSDeluxe)](https://github.com/Peltoche/lsd)
 
-```bash
+```zsh
 brew install lsd
 ```
 
 Uncomment the LSD aliases in the `~/.zshrc` or add them if you have an existing
 `.zshrc`.
 
-```bash
+```zsh
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
@@ -136,6 +136,12 @@ alias lt='ls --tree'
 
 ## [FZF (command-line fuzzy finder)](https://github.com/junegunn/fzf)
 
-```bash
+```zsh
 brew install fzf
+```
+
+## [Autojump](https://github.com/wting/autojump)
+
+```zsh
+brew install autojump
 ```
