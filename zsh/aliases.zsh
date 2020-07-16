@@ -48,6 +48,27 @@ alias krmevictions="kubectl get pods -A | grep Evicted | awk "{print \$2}" | xar
 alias ktx="kubectx"
 alias kns="kubens"
 
+# Helm
+alias hi="helm install"
+alias hin="helm install -n"
+alias hu="helm upgrade -i"
+alias hun="helm upgrade -i -n"
+alias hd="helm delete"
+alias hdn="helm delete -n"
+alias hls="helm ls"
+alias hlsn="helm ls -n"
+alias hlsa="helm ls -A"
+alias hrls="helm repo list"
+alias hsr="helm search repo"
+
+# Skaffold
+alias sr="skaffold run"
+alias srp="skaffold run -p"
+alias sd="skaffold delete"
+alias sdp="skaffold delete -p"
+alias sdb="skaffold debug --port-forward"
+alias sb="skaffold build"
+
 # Docker
 alias doc="docker"
 alias dk="docker kill"
