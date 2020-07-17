@@ -7,7 +7,6 @@ endif
 
 call plug#begin('$HOME/dotfiles/nvim/plugged')
 
-Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
