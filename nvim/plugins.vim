@@ -26,3 +26,4 @@ call plug#end()
 
 source $HOME/dotfiles/nvim/plug-config/gruvbox.vim
 source $HOME/dotfiles/nvim/plug-config/airline.vim
+source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
