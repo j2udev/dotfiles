@@ -49,6 +49,8 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
+nmap <space>e :CocCommand explorer<CR>
+nmap <space>f :CocCommand explorer --preset floating<CR>
 
 " Fugitive
 nmap <leader>gs :G<CR>
