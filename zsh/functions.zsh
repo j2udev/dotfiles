@@ -11,6 +11,7 @@ function kconm { cp ~/.kube/config ~/.kube/config.backup && KUBECONFIG=~/.kube/c
 function drmig { docker rmi $(docker images | grep $1 | xargs -L2| awk '{print($3)}') }
 function drmigf { docker rmi --force $(docker images | grep $1 | xargs -L2| awk '{print($3)}') }
 function lint { docker run -e RUN_LOCAL=true -v $(pwd):/tmp/lint/ github/super-linter }
+function lintf { docker run -e RUN_LOCAL=true -v $1:/tmp/lint/ github/super-linter }
 
 
 
