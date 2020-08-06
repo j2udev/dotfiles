@@ -16,4 +16,5 @@ set lbr
 set tw=80
 set wrap
 set updatetime=50
+set clipboard=unnamed
 set background=dark

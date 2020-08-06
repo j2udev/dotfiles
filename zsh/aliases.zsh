@@ -111,6 +111,20 @@ alias gwcee="./gradlew cleanEclipse eclipse"
 # Maven
 alias create-nifi-processor="mvn archetype:generate -DarchetypeGroupId=org.apache.nifi -DarchetypeArtifactId=nifi-processor-bundle-archetype -DarchetypeVersion=1.9.2 -DnifiVersion=1.9.2"
 
+# Hugo
+alias hs="hugo serve"
+
+# Vagrant
+alias v="vagrant"
+alias vu="vagrant up"
+alias vh="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
+alias vd="vagrant destroy"
+alias vrl="vagrant reload"
+alias vp="vagrant provision"
+alias vssh="vagrant ssh"
+
 # Recording
 alias arec="asciinema rec"
 alias aplay="asciinema play"
