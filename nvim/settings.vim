@@ -1,5 +1,6 @@
 set number relativenumber
 set mouse=a
+set cursorline
 set noerrorbells
 set novisualbell
 set tabstop=4 softtabstop=4

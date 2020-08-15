@@ -45,6 +45,7 @@ alias mkddu="eval $(minikube docker-env -u)"
 # Kubernetes
 alias wkgp="watch kubectl get pods -A"
 alias kgpw="kubectl get pods -A -w"
+alias kgpa="kubectl get pods -A"
 alias kg="kubectl get"
 alias kd="kubectl describe"
 alias ke="kubectl edit"

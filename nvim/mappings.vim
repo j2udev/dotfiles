@@ -1,6 +1,7 @@
 " -------------------
 " General key mappings
 " -------------------
+
 let mapleader = " "
 
 " Jump out of Insert quickly
@@ -11,6 +12,10 @@ inoremap kj <Esc>
 vnoremap < <gv
 vnoremap > >gv
 
+" Move highlighted lines up and down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Tab through buffers
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
@@ -18,21 +23,57 @@ nnoremap <silent> <S-TAB> :bprevious<CR>
 " Alternate way to save
 nnoremap <silent> <C-s> :w<CR>
 
-" Better window navigation
+" Paste yanked text multiple times
+nnoremap "0p p
+
+" -------------------
+"  Window management
+" -------------------
+
+" Window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Use alt + hjkl to resize windows
+" Resize windows
+" alt + j
 nnoremap <silent> ∆    :resize -5<CR>
+" alt + k
 nnoremap <silent> ˚    :resize +5<CR>
+" alt + h
 nnoremap <silent> ˙    :vertical resize -2<CR>
+" alt + l
 nnoremap <silent> ¬    :vertical resize +2<CR>
+
+" Split windows
+nnoremap <leader>sh :wincmd s<CR>
+nnoremap <leader>sv :wincmd v<CR>
+
+" Quit window
+nnoremap <leader>q :wincmd q<CR>
+
+" -------------------
+" Toggles
+" -------------------
+" Toggle relativenumbers
+nnoremap <leader>tn :set number! relativenumber!<CR>
+" Toggle search highlights
+nnoremap <leader>ts :set hlsearch!<CR>
+
 
 " -------------------
 " Plugin key mappings
 " -------------------
+
+" CoC
+" Tab completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Explorer
+nmap <space>e :CocCommand explorer<CR>
+
+" Bbye
+nnoremap <Leader>d :Bdelete<CR>
 
 " Fugitive
 nmap <leader>gs :G<CR>
@@ -43,32 +84,18 @@ nmap <leader>gp :Gpush<CR>
 nnoremap <space>/ :Commentary<CR>
 vnoremap <space>/ :Commentary<CR>
 
-" nnoremap <leader>1 :set number! relativenumber!<CR>
-" nnoremap <leader>2 :set hlsearch!<CR>
-" nnoremap <C-l> :bn<CR>
-" nnoremap <C-h> :bp<CR>
-" nnoremap <C-a> :%y+<CR>
-" nnoremap <leader>D :bd<CR>
-" nnoremap <leader>sh :wincmd s<CR>
-" nnoremap <leader>sv :wincmd v<CR>
-" nnoremap <leader>q :wincmd q<CR>
-" nnoremap <leader>h :wincmd h<CR>
-" nnoremap <leader>l :wincmd l<CR>
-" nnoremap <leader>j :wincmd j<CR>
-" nnoremap <leader>k :wincmd k<CR>
-" nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-" nnoremap <leader>u :UndotreeShow<CR>
-" nnoremap <leader>nt :NERDTree<CR>
-" nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+" UndoTree
+nnoremap <leader>u :UndotreeShow<CR>
+
+" Ripgrep
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
-" nnoremap <leader>ps :Rg<SPACE>
-" nnoremap <leader>pf :Files<CR>
+nnoremap <leader>ps :Rg<SPACE>
+nnoremap <leader>pf :Files<CR>
 " nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 " nnoremap <leader>+ :vertical resize +5<CR>
 " nnoremap <leader>- :vertical resize -5<CR>
 " nnoremap <leader>rp :resize 100<CR>
-" vnoremap J :m '>+1<CR>gv=gv
-" vnoremap K :m '<-2<CR>gv=gv
 " vnoremap X "_d
 " inoremap <C-c> <esc>
 " inoremap <silent><expr> <TAB>
@@ -92,6 +119,4 @@ vnoremap <space>/ :Commentary<CR>
 " nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 " nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 " nnoremap <leader>cr :CocRestart
-nmap <space>e :CocCommand explorer<CR>
-nmap <space>f :CocCommand explorer --preset floating<CR>
 

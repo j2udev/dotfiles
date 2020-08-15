@@ -5,6 +5,8 @@ if empty(glob('$HOME/dotfiles/nvim/plugged'))
   "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+" let loaded_netrwPlugin = 1
+
 call plug#begin('$HOME/dotfiles/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -23,6 +25,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 Plug 'jremmen/vim-ripgrep'
 Plug 'unblevable/quick-scope'
+Plug 'moll/vim-bbye'
+Plug 'blueyed/vim-diminactive'
 
 call plug#end()
 
