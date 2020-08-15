@@ -4,6 +4,9 @@
 
 let mapleader = " "
 
+" Shortcut to source init.vim
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
 " Jump out of Insert quickly
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -56,6 +59,7 @@ nnoremap <leader>q :wincmd q<CR>
 " -------------------
 " Toggles
 " -------------------
+
 " Toggle relativenumbers
 nnoremap <leader>tn :set number! relativenumber!<CR>
 " Toggle search highlights
@@ -67,10 +71,30 @@ nnoremap <leader>ts :set hlsearch!<CR>
 " -------------------
 
 " CoC
-" Tab completion.
-inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Explorer
 nmap <space>e :CocCommand explorer<CR>
+" Tab completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" " GoTo code navigation.
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>g] <Plug>(coc-diagnostic-next)
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>cr :CocRestart
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Bbye
 nnoremap <Leader>d :Bdelete<CR>
@@ -88,35 +112,8 @@ vnoremap <space>/ :Commentary<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 
 " Ripgrep
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-" nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pf :Files<CR>
-" nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-" nnoremap <leader>+ :vertical resize +5<CR>
-" nnoremap <leader>- :vertical resize -5<CR>
-" nnoremap <leader>rp :resize 100<CR>
-" vnoremap X "_d
-" inoremap <C-c> <esc>
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" " Use <c-space> to trigger completion.
-" inoremap <silent><expr> <c-space> coc#refresh()
-
-" " GoTo code navigation.
-" nmap <leader>gd <Plug>(coc-definition)
-" nmap <leader>gy <Plug>(coc-type-definition)
-" nmap <leader>gi <Plug>(coc-implementation)
-" nmap <leader>gr <Plug>(coc-references)
-" nmap <leader>rr <Plug>(coc-rename)
-" nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-" nmap <leader>g] <Plug>(coc-diagnostic-next)
-" vmap <leader>a <Plug>(coc-codeaction-selected)
-" nmap <leader>a <Plug>(coc-codeaction-selected)
-" nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-" nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-" nnoremap <leader>cr :CocRestart
+nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>ps :Rg<SPACE>
 
