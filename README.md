@@ -42,9 +42,6 @@ The iTerm profiles in this repository take advantage of natural text editing.
 You can jump backward or forward by a word with option + &#8592; or &#8594;
 respectively. You can jump to the beginning or end of a line with cmd + &#8592;
 or &#8594; respectively. You can combine these jumps with delete or backspace.
-The aformentioned movements will only work if you remove the
-[vi-mode](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode) plugin
-in `dotfiles/zsh/plugins.zsh`. This plugin adds vi keybinds to the command line.
 
 ![iTerm](assets/iterm-natural-text-editing.gif)
 
