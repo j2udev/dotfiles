@@ -40,6 +40,7 @@
       dir                     # current directory
       vcs                     # git status
       kubecontext             # current kubernetes context (https://kubernetes.io/)
+      terraform               # terraform workspace (https://www.terraform.io)
       # =========================[ Line #2 ]=========================
       newline
       prompt_char             # prompt symbol
@@ -67,7 +68,7 @@
       rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
       rvm                     # ruby version from rvm (https://rvm.io)
       # kubecontext             # current kubernetes context (https://kubernetes.io/)
-      terraform               # terraform workspace (https://www.terraform.io)
+      # terraform               # terraform workspace (https://www.terraform.io)
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
       # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
       # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
