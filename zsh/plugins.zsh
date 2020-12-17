@@ -14,7 +14,6 @@ plugins=(
     vscode
     extract
     terraform
-    jira
     fancy-ctrl-z
     vagrant
 )

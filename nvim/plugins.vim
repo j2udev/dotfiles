@@ -35,3 +35,4 @@ source $HOME/dotfiles/nvim/plug-config/airline.vim
 source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
 source $HOME/dotfiles/nvim/plug-config/coc.vim
 source $HOME/dotfiles/nvim/plug-config/quickscope.vim
+source $HOME/dotfiles/nvim/plug-config/prettier.vim

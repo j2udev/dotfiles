@@ -1,4 +1,11 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
 # Vim

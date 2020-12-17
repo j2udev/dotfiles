@@ -4,3 +4,7 @@ unsetopt inc_append_history
 unsetopt share_history
 # Enables auto-completion
 autoload -U compinit && compinit
+# Let pyenv set the Python version
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
