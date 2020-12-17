@@ -22,5 +22,3 @@ case "$P10K_PROFILE" in
     ./print-status.sh "Unrecognized Option: $P10K_PROFILE" --status error
     ;;
 esac
-
-source "$HOME"/.zshrc

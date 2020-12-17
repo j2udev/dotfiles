@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+cd "$(dirname "$(readlink "$0" || echo "$0")")" || exit
 
 ./print-status.sh "Select a Powerlevel10K Oh My Zsh profile you would like to use:" --status info
 ./print-status.sh "1) Spring"
