@@ -1,25 +1,23 @@
 #!/bin/bash
-set -e
 
-cd "$(dirname "${BASH_SOURCE[0]}")"
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit
 
-START_OF_COLOR="\033[37;"
-WHITE_ON_GREEN=$START_OF_COLOR"42m"
-WHITE_ON_RED=$START_OF_COLOR"41m"
-END_OF_COLOR="\033[0m"
-
-printf "$WHITE_ON_GREEN%s$END_OF_COLOR\n%s\n%s\n%s\n%s\n" "Select a Powerlevel10K Oh My Zsh profile you would like to use:" "1) Spring" "2) WVU" "3) USA" "4) Quit" 
+./print-status.sh "Select a Powerlevel10K Oh My Zsh profile you would like to use:" --status info
+./print-status.sh "1) Spring"
+./print-status.sh "2) WVU"
+./print-status.sh "3) USA"
 
 read -r P10K_PROFILE
 
-case $P10K_PROFILE in
-  1|2|3 )
-    ./set-p10k-theme.sh "$P10K_PROFILE"
+case "$P10K_PROFILE" in
+  1|2|3)
+    source ./set-p10k-theme.sh "$P10K_PROFILE"
     ;;
-  4 )
-    printf "$WHITE_ON_GREEN%s$END_OF_COLOR\n" "Quitting...";
-    exit;;
-  * )
-    printf "$WHITE_ON_RED%s$END_OF_COLOR\n" "Unrecognized Option";
-    exit;;
+  4)
+    exit 1
+    ;;
+  *)
+    ./print-status.sh "Unrecognized Option: $P10K_PROFILE" --status error
+    exit 1
+    ;;
 esac
