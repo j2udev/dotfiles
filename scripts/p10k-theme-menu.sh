@@ -6,6 +6,7 @@ cd "$(dirname "$(readlink "$0" || echo "$0")")" || exit
 ./print-status.sh "1) Spring"
 ./print-status.sh "2) WVU"
 ./print-status.sh "3) USA"
+./print-status.sh "4) Quit"
 
 read -r P10K_PROFILE
 

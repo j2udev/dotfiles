@@ -36,9 +36,6 @@ RUN set -eux \
     && apt-get install -y yarn
 
 RUN set -eux \
-    && ln -s /root/dotfiles/scripts/p10k-theme-menu.sh /usr/local/bin/theme
-
-RUN set -eux \
     && curl -sL https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd-0.19.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar -xz -C /opt \
     && sudo ln -s /opt/lsd-0.19.0-x86_64-unknown-linux-gnu/lsd /usr/local/bin/lsd
 RUN set -eux \
