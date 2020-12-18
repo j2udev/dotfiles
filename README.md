@@ -25,6 +25,21 @@ alias foobar="foo bar"
 ...
 ```
 
+## [Docker Dotfiles](https://hub.docker.com/repository/docker/j2udevelopment/dev-env)
+
+I have also containerized this setup so that it can be run anywhere. The only pre-requisite would be installing Nerd Fonts as detailed below. Depending on your environment and terminal of choice, that step can vary quite a bit, but I promise it's worth it!
+
+By running the below, you can mount a directory into a hackable Ubuntu environment with my dotfiles setup:
+
+```bash
+docker run -it \
+        --network host \
+        --name ubuntu-dev-env \
+        -v /var/run/docker.sock/:/var/run/docker.sock \
+        -v <PATH_TO_FOLDER_YOU_WANT_TO_MOUNT>:/root/dev \
+        j2udevelopment/dev-env /bin/zsh
+```
+
 ## [iTerm2](https://www.iterm2.com/)
 
 iTerm is my terminal of choice. You can install it with:
@@ -67,7 +82,7 @@ Run the following function defined in `dotfiles/zsh/functions.zsh` to set a
 preconfigured Powerlevel10k command prompt:
 
 ```zsh
-prompt-theme
+theme
 ```
 
 or run the following in order to use the Powerlevel10k configuration wizard:
@@ -108,6 +123,13 @@ If you choose this option, the `MesloLGS NF` should be automatically selected
 from the font dropdown. Either of the above font packages will work well.
 
 Restart iTerm.
+
+## [Neovim](https://neovim.io/)
+
+Neovim is a better version of Vim. My Neovim config is admittedly very tailored to
+my personal preferences, but others are welcome to give it a go. My plugins, key mappings, and settings can be found in `nvim/plugins.vim`, `nvim/mappings.vim`, and `nvim/settings.vim` respectively. A screenshot of my current nvim setup is shown below.
+
+![Neovim](assets/nvim-example.png)
 
 ## [LSD(LSDeluxe)](https://github.com/Peltoche/lsd)
 
