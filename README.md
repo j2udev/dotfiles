@@ -49,7 +49,8 @@ brew cask install iterm2
 ```
 
 Import the desired iterm profile theme from the `dotfiles/iterm/profiles`
-folder.  
+folder.
+
 You will need to update the font after installing Nerd Fonts in subsequent
 steps.
 
@@ -105,8 +106,10 @@ brew cask install font-hack-nerd-font
 ```
 
 If you choose this option, you'll need to manually set the font in your iTerm
-preferences. Open iTerm preferences with:  
-`cmd + ,` and go to Profiles -> Text -> Font  
+preferences. Open iTerm preferences with:
+
+`cmd + ,` and go to Profiles -> Text -> Font
+
 Select `Hack Nerd Font Mono` from the dropdown.
 
 To let the p10k configuration wizard do the font installation, run the below and
