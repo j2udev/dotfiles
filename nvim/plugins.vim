@@ -10,6 +10,10 @@ endif
 call plug#begin('$HOME/dotfiles/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -37,3 +41,4 @@ source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
 source $HOME/dotfiles/nvim/plug-config/coc.vim
 source $HOME/dotfiles/nvim/plug-config/quickscope.vim
 source $HOME/dotfiles/nvim/plug-config/prettier.vim
+source $HOME/dotfiles/nvim/plug-config/languageclient.vim
