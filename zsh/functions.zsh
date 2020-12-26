@@ -15,3 +15,9 @@ drmigf() { docker rmi --force "$(docker images | grep $1 | xargs -L2| awk '{prin
 lint() { docker run -e RUN_LOCAL=true -v "$(pwd)":/tmp/lint/ github/super-linter }
 lintf() { docker run -e RUN_LOCAL=true -v "$(pwd)""$1":/tmp/lint/ github/super-linter }
 
+j2u() { docker run -it \
+        --network host \
+        --name ubuntu-dev-env \
+        -v /var/run/docker.sock/:/var/run/docker.sock \
+        -v "$PWD":/root/dev \
+        j2udevelopment/dev-env /bin/zsh }
