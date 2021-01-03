@@ -37,7 +37,7 @@
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-
+  // language servers
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
@@ -47,4 +47,3 @@
     }
   }
 }
- 

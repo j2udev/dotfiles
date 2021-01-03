@@ -1,19 +1,15 @@
-" -------------------
-" General key mappings
-" -------------------
-
 let mapleader = " "
 
-" Shortcut to source init.vim
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+" -------------------
 
 " Jump out of Insert quickly
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" Better indenting
-vnoremap < <gv
-vnoremap > >gv
+" Prioritize yanked text over anything else
+" If you need a cut operation, use x
+nnoremap d "_d
+nnoremap c "_c
 
 " Move highlighted lines up and down
 vnoremap J :m '>+1<CR>gv=gv
@@ -23,11 +19,13 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
-" Alternate way to save
-nnoremap <silent> <C-s> :w<CR>
+" Better nav for omnicomplete
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-" Paste yanked text multiple times
-nnoremap "0p p
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
 
 " -------------------
 "  Window management
@@ -49,13 +47,6 @@ nnoremap <silent> ˙    :vertical resize -2<CR>
 " alt + l
 nnoremap <silent> ¬    :vertical resize +2<CR>
 
-" Split windows
-nnoremap <leader>sh :wincmd s<CR>
-nnoremap <leader>sv :wincmd v<CR>
-
-" Quit window
-nnoremap <leader>q :wincmd q<CR>
-
 " -------------------
 " Toggles
 " -------------------
@@ -65,59 +56,48 @@ nnoremap <leader>tn :set number! relativenumber!<CR>
 " Toggle search highlights
 nnoremap <leader>ts :set hlsearch!<CR>
 
-
 " -------------------
 " Plugin key mappings
 " -------------------
 
 " CoC
-" Explorer
-nmap <space>e :CocCommand explorer<CR>
 " Tab completion.
 inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 " " GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
+nmap <leader>jd <Plug>(coc-definition)
+nmap <leader>jt <Plug>(coc-type-definition)
+nmap <leader>ji <Plug>(coc-implementation)
+nmap <leader>jr <Plug>(coc-references)
+nmap <leader>jR <Plug>(coc-rename)
+nmap <leader>j[ <Plug>(coc-diagnostic-prev)
+nmap <leader>j] <Plug>(coc-diagnostic-next)
+" vmap <leader>a <Plug>(coc-codeaction-selected)
+" nmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>jp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>jn <Plug>(coc-diagnostic-next-error)
+" nnoremap <leader>cr :CocRestart
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Prettier
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" Bbye
-nnoremap <Leader>d :Bdelete<CR>
-
-" Fugitive
-nmap <leader>gs :G<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gp :Gpush<CR>
-
 " Commentary
-nnoremap <space>/ :Commentary<CR>
-vnoremap <space>/ :Commentary<CR>
+nnoremap <Leader>/ :Commentary<cr>
+vnoremap <Leader>/ :Commentary<cr>
 
-" UndoTree
-nnoremap <leader>u :UndotreeShow<CR>
+" Prettier
+" vmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 " Ripgrep
-nnoremap <leader>pf :Files<CR>
-nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>ps :Rg<SPACE>
+" TODO: Figure out why this wasn't working in whichkey config
+nnoremap <leader>? :h <C-R>=expand("<cword>")<CR><CR>
 
+" WhichKey
+nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+" Startify
+" nnoremap <silent> <leader>S :Startify<CR>
