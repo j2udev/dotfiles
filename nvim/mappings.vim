@@ -47,9 +47,9 @@ nnoremap <silent> ˙    :vertical resize -2<CR>
 " alt + l
 nnoremap <silent> ¬    :vertical resize +2<CR>
 
-" --------------------------------------------------------------------------
-" Plugin key mappings (most plugin key maps have been moved to whichkey.vim)
-" --------------------------------------------------------------------------
+" --------------------------------------------------------------------------------------
+" Plugin key mappings (most plugin key maps have been moved to plug-config/whichkey.vim)
+" --------------------------------------------------------------------------------------
 
 " Commentary
 nnoremap <Leader>/ :Commentary<cr>
