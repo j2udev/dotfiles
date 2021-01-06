@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export EDITOR="nvim"
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

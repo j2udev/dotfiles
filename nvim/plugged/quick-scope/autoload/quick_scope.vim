@@ -34,6 +34,30 @@ function! quick_scope#HighlightLine(direction, targets) abort
   endif
 endfunction
 
+function! quick_scope#HighlightLineDelayCallback(direction, targets, _id) abort
+  call quick_scope#UnhighlightLine()
+  call quick_scope#HighlightLine(a:direction, a:targets)
+endfunction
+
+let s:timer = -1
+
+function! quick_scope#HighlightLineDelay(direction, targets) abort
+  if g:qs_enable && g:qs_delay > 0
+    call timer_stop(s:timer)
+    let Cb = function('quick_scope#HighlightLineDelayCallback', [a:direction, a:targets])
+    let s:timer = timer_start(g:qs_delay, Cb)
+  else
+    call quick_scope#UnhighlightLine()
+    call quick_scope#HighlightLine(a:direction, a:targets)
+  endif
+endfunction
+
+function! quick_scope#StopTimer() abort
+  if g:qs_delay > 0
+    call timer_stop(s:timer)
+  endif
+endfunction
+
 function! quick_scope#UnhighlightLine() abort
   for m in filter(getmatches(), printf('v:val.group ==# "%s" || v:val.group ==# "%s"', g:qs_hi_group_primary, g:qs_hi_group_secondary))
     call matchdelete(m.id)
@@ -201,6 +225,14 @@ function! s:get_highlight_patterns(line, cursor, end, targets) abort
   " Keeps track of the number of occurrences for each target
   let occurrences = {}
 
+  " Use 'count_proxy' to account for [count]f when highlight on keys mode is
+  " used, otherwise just use assume 1
+  if !exists('g:qs_highlight_on_keys')
+    let count_proxy = 1
+  else
+    let count_proxy = v:count1
+  endif
+
   " Patterns to match the characters that will be marked with primary and
   " secondary highlight groups, respectively
   let [patt_p, patt_s] = ['', '']
@@ -266,7 +298,7 @@ function! s:get_highlight_patterns(line, cursor, end, targets) abort
       let [char_p, char_s] = ['', '']
 
       let is_first_word = 0
-    elseif (index(a:targets, char) != -1 && !g:qs_ignorecase) || index(a:targets, tolower(char)) != -1
+    elseif index(a:targets, g:qs_ignorecase ? tolower(char) : char) != -1
       if g:qs_ignorecase
         " When g:qs_ignorecase is set, make char_i the lowercase of char
         let char_i = tolower(char)
@@ -295,10 +327,10 @@ function! s:get_highlight_patterns(line, cursor, end, targets) abort
         " composing bytes so we adjust accordingly
         " eg. with a multibyte char of length 3, c will point to the
         " 3rd byte. Minus (len(char) - 1) to adjust to 1st byte
-        if char_occurrences == v:count1 && ((direction == 1 && hi_p == 0) || direction == 0)
+        if char_occurrences == count_proxy && ((direction == 1 && hi_p == 0) || direction == 0)
           let hi_p = c - (1 - direction) * (len(char) - 1)
           let char_p = char
-        elseif char_occurrences == (v:count1 + 1) && ((direction == 1 && hi_s == 0) || direction == 0)
+        elseif char_occurrences == (count_proxy + 1) && ((direction == 1 && hi_s == 0) || direction == 0)
           let hi_s = c - (1 - direction) * (len(char)- 1)
           let char_s = char
         endif

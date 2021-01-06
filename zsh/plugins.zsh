@@ -10,7 +10,7 @@ plugins=(
     minikube
     helm
     npm
-    gradle-completion
+    gradle
     vscode
     extract
     terraform

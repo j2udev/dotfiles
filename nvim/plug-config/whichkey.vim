@@ -43,37 +43,29 @@ let g:which_key_map.b = {
       \ 'p' : ['bprevious'              , 'previous buffer'],
       \ '?' : ['Buffers'                , 'fzf buffer'],
       \ }
-" TODO: Come back to this after I've had more time to tinker with barbar
-" let g:which_key_map.b = {
-"       \ 'name' : '+buffer' ,
-"       \ '>' : [':BufferMoveNext'        , 'move next'],
-"       \ '<' : [':BufferMovePrevious'    , 'move prev'],
-"       \ '1' : [':BufferGoto 1'          , 'buffer 1'],
-"       \ '2' : [':BufferGoto 2'          , 'buffer 2'],
-"       \ '3' : [':BufferGoto 3'          , 'buffer 3'],
-"       \ '4' : [':BufferGoto 4'          , 'buffer 4'],
-"       \ '5' : [':BufferGoto 5'          , 'buffer 5'],
-"       \ '6' : [':BufferGoto 6'          , 'buffer 6'],
-"       \ '7' : [':BufferGoto 7'          , 'buffer 7'],
-"       \ '8' : [':BufferGoto 8'          , 'buffer 8'],
-"       \ '9' : [':BufferGoto 9'          , 'buffer 9'],
-"       \ '0' : [':BufferGoto 0'          , 'buffer 0'],
-"       \ 'b' : [':BufferPick'            , 'pick buffer'],
-"       \ 'd' : [':Bdelete'               , 'delete buffer'],
-"       \ 'D' : [':BufferOrderByDirectory', 'order by directory'],
-"       \ 'f' : ['bfirst'                 , 'first buffer'],
-"       \ 'l' : ['blast'                  , 'last buffer'],
-"       \ 'n' : ['bnext'                  , 'next buffer'],
-"       \ 'p' : ['bprevious'              , 'previous buffer'],
-"       \ 't' : [':BarbarDisable'          , 'toggle barbar'],
-"       \ '?' : ['Buffers'                , 'fzf buffer'],
-"       \ }
 
 " c is for CoC
 let g:which_key_map.c = {
       \ 'name' : '+coc' ,
-      \ 'e' : [':CocCommand explorer'   , 'CoC explorer'],
-      \ 'R' : [':CocRestart'            , 'CoC restart'],
+      \ '.' : [':CocRestart'                         , 'restart'],
+      \ 'a' : ['<Plug>(coc-codeaction)'              , 'code action'],
+      \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
+      \ 'e' : [':CocCommand explorer'                , 'explorer'],
+      \ 'm' : [':CocList marketplace'                , 'marketplace'],
+      \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'diagnostic-prev'],
+      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'diagnostic-prev-error'],
+      \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'diagnostic-next'],
+      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'diagnostic-next-error'],
+      \ 'R' : ['<Plug>(coc-rename)'                  , 'rename'],
+      \ }
+
+" j is for jump
+let g:which_key_map.j = {
+      \ 'name' : '+jump' ,
+      \ 'd' : ['<Plug>(coc-definition)'            , 'definition'],
+      \ 'i' : ['<Plug>(coc-implementation)'        , 'implementation'],
+      \ 'r' : ['<Plug>(coc-references)'            , 'references'],
+      \ 't' : ['<Plug>(coc-type-definition)'       , 'coc-type-definition'],
       \ }
 
 " g is for Git
@@ -111,7 +103,7 @@ let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'              , 'history'],
       \ 'c' : [':Commits'               , 'commits'],
-      \ 'g' : [':GFiles'               , 'git files'],
+      \ 'g' : [':GFiles'                , 'git files'],
       \ 'G' : [':GFiles?'               , 'modified git files'],
       \ 'h' : [':History'               , 'file history'],
       \ 'H' : [':History:'              , 'command history'],
@@ -125,60 +117,10 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'                   , 'FZF'],
       \ }
 
-" TODO: Come back to this once I've had a chance to explore sessions
-" let g:which_key_map.S = {
-"       \ 'name' : '+Session' ,
-"       \ 'c' : [':SClose'          , 'Close Session']  ,
-"       \ 'd' : [':SDelete'         , 'Delete Session'] ,
-"       \ 'l' : [':SLoad'           , 'Load Session']     ,
-"       \ 's' : [':Startify'        , 'Start Page']     ,
-"       \ 'S' : [':SSave'           , 'Save Session']   ,
-"       \ }
-
-
-" TODO: Come back to this once I've had a chance to go over it
-" " l is for language server protocol
-" let g:which_key_map.l = {
-"       \ 'name' : '+lsp' ,
-"       \ '.' : [':CocConfig'                          , 'config'],
-"       \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-"       \ 'a' : ['<Plug>(coc-codeaction)'              , 'code action'],
-"       \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-"       \ 'b' : [':CocNext'                            , 'next action'],
-"       \ 'B' : [':CocPrev'                            , 'prev action'],
-"       \ 'c' : [':CocList commands'                   , 'commands'],
-"       \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-"       \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-"       \ 'e' : [':CocList extensions'                 , 'extensions'],
-"       \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-"       \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-"       \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-"       \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-"       \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-"       \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-"       \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-"       \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-"       \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
-"       \ 'o' : [':Vista!!'                            , 'outline'],
-"       \ 'O' : [':CocList outline'                    , 'search outline'],
-"       \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-"       \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-"       \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-"       \ 'r' : ['<Plug>(coc-references)'              , 'references'],
-"       \ 'R' : ['<Plug>(coc-rename)'                  , 'rename'],
-"       \ 's' : [':CocList -I symbols'                 , 'references'],
-"       \ 'S' : [':CocList snippets'                   , 'snippets'],
-"       \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-"       \ 'u' : [':CocListResume'                      , 'resume list'],
-"       \ 'U' : [':CocUpdate'                          , 'update CoC'],
-"       \ 'z' : [':CocDisable'                         , 'disable CoC'],
-"       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
-"       \ }
-
 " t is for terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
+      \ ';' : [':FloatermNew --wintype=normal --height=6'       , 'terminal'],
       \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
@@ -187,6 +129,15 @@ let g:which_key_map.t = {
       \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
+      \ }
+
+" T is for toggle
+let g:which_key_map.T = {
+      \ 'name' : '+toggle' ,
+      \ 's' : [':set hlsearch!'                    , 'search highlight'],
+      \ 'n' : [':set number!'                      , 'numbers'],
+      \ 'r' : [':set relativenumber!'              , 'relative numbers'],
+      \ 'a' : [':set number! relativenumber!'      , 'all numbers'],
       \ }
 
 " Register which key map
