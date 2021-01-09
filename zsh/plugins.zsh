@@ -16,4 +16,5 @@ plugins=(
     terraform
     fancy-ctrl-z
     vagrant
+    zsh-autosuggestions
 )

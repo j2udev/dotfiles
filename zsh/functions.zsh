@@ -1,6 +1,9 @@
 # General
 af() { alias | fzf }
 afg() { alias | rg "$*" }
+lg() { ls -l | rg "$*" }
+lf() { ls -l | fzf }
+lsg() { ls | rg "$*" }
 
 # Powerlevel10k
 theme() { /bin/bash "$HOME"/dotfiles/scripts/p10k-theme-menu.sh ; source "$HOME"/.zshrc }

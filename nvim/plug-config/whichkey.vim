@@ -98,6 +98,14 @@ let g:which_key_map.g = {
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
 
+" m is for marks
+let g:which_key_map.m = {
+      \ 'name' : '+marks' ,
+      \ 'm' : [':Marks'                          , 'show marks'],
+      \ 'd' : [':delm!'                    , 'delete marks in buffer'],
+      \ 'D' : [':delm! | delm A-Z0-9'            , 'delete all marks'],
+      \ }
+
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -108,6 +116,7 @@ let g:which_key_map.s = {
       \ 'h' : [':History'               , 'file history'],
       \ 'H' : [':History:'              , 'command history'],
       \ 'l' : [':Lines'                 , 'lines'] ,
+      \ 'm' : [':Marks'                 , 'marks'] ,
       \ 'M' : [':Maps'                  , 'normal maps'] ,
       \ 'p' : [':Helptags'              , 'help tags'] ,
       \ 't' : [':Rg'                    , 'text Rg'],

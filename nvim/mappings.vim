@@ -52,8 +52,8 @@ nnoremap <silent> ¬    :vertical resize +2<CR>
 " --------------------------------------------------------------------------------------
 
 " Commentary
-nnoremap <Leader>/ :Commentary<cr>
-vnoremap <Leader>/ :Commentary<cr>
+nnoremap <Leader>/ :Commentary<CR>
+vnoremap <Leader>/ :Commentary<CR>
 
 " Prettier
 " TODO: Figure out why this doesn't appear to be working
