@@ -1,10 +1,10 @@
-if empty(glob('$HOME/dotfiles/nvim/plugged'))
+if empty(glob('$HOME/.config/nvim/plugged'))
   silent !curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('$HOME/dotfiles/nvim/plugged')
+call plug#begin('$HOME/.config/nvim/plugged')
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git
