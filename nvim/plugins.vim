@@ -57,7 +57,7 @@ Plug 'mbbill/undotree'
 Plug 'moll/vim-bbye'
 " Better focus when window is split
 Plug 'blueyed/vim-diminactive'
-" Be smarter project directories
+" Be smarter about project directories
 Plug 'airblade/vim-rooter'
 call plug#end()
 
