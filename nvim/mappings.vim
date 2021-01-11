@@ -55,11 +55,6 @@ nnoremap <silent> ¬    :vertical resize +2<CR>
 nnoremap <Leader>/ :Commentary<CR>
 vnoremap <Leader>/ :Commentary<CR>
 
-" Prettier
-" TODO: Figure out why this doesn't appear to be working
-" vmap <leader>F  <Plug>(coc-format-selected)
-" nmap <leader>F  <Plug>(coc-format-selected)
-
 " Ripgrep
 " TODO: Figure out why this wasn't working in whichkey config
 nnoremap <leader>? :h <C-R>=expand("<cword>")<CR><CR>

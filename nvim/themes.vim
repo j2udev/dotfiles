@@ -1,3 +1,3 @@
-syntax on
+syntax enable
 colorscheme onedark
 " colorscheme nvcode
