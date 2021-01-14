@@ -20,6 +20,9 @@ drmigf() { docker rmi --force "$(docker images | rg $1 | xargs -L2| awk '{print(
 lint() { docker run -e RUN_LOCAL=true -v "$(pwd)":/tmp/lint/ github/super-linter }
 lintf() { docker run -e RUN_LOCAL=true -v "$(pwd)""$1":/tmp/lint/ github/super-linter }
 
+# Terraform
+tfdestroy() { terraform refresh -var-file $1 ; terraform destroy -var-file $1 }
+
 j2u() { docker run -it \
         --network host \
         --name ubuntu-dev-env \
