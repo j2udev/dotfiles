@@ -51,6 +51,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Markdown preview
 Plug 'JamshedVesuna/vim-markdown-preview'
+" Whitespace
+Plug 'ntpeters/vim-better-whitespace'
 " Undotree
 Plug 'mbbill/undotree'
 " Better buffer deletion
