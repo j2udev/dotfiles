@@ -4,6 +4,8 @@ afg() { alias | rg "$*" }
 lg() { ls -l | rg "$*" }
 lf() { ls -l | fzf }
 lsg() { ls | rg "$*" }
+psg() { ps aux | rg "$*" }
+psf() { ps aux | fzf }
 
 # Powerlevel10k
 theme() { /bin/bash "$HOME"/dotfiles/scripts/p10k-theme-menu.sh ; source "$HOME"/.zshrc }
