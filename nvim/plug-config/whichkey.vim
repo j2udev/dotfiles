@@ -25,10 +25,10 @@ let g:which_key_map['C'] = [':Colors'                                          ,
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete buffer']
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['f'] = [ ':Files'                                          , 'find file' ]
-let g:which_key_map['F'] = [ ':Prettier'                                       , 'format file' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split horizontal']
 let g:which_key_map['o'] = 'new line below'
 let g:which_key_map['O'] = 'new line above'
+let g:which_key_map['p'] = [ ':Prettier'                                       , 'format file' ]
 let g:which_key_map['r'] = [ ':FloatermNew ranger'                             , 'ranger']
 let g:which_key_map['q'] = [ ':wincmd q'                                       , 'quit window' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
