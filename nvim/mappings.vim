@@ -5,11 +5,24 @@ let mapleader = " "
 " Jump out of Insert quickly
 inoremap jk <Esc>
 inoremap kj <Esc>
+tnoremap jk <C-\><C-n>
+tnoremap kj <C-\><C-n>
 
 " Prioritize yanked text over anything else
 " If you need a cut operation, use x
 nnoremap d "_d
 nnoremap c "_c
+nnoremap D "_D
+nnoremap C "_C
+vnoremap d "_d
+vnoremap c "_c
+
+" new lines above and below
+nmap <leader>o o<Esc>
+nmap <leader>O O<Esc>
+
+" Paste multiple times
+xnoremap p pgvy
 
 " Move highlighted lines up and down
 vnoremap J :m '>+1<CR>gv=gv

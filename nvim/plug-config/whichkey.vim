@@ -16,7 +16,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['.'] = [ ':so ~/.config/nvim/init.vim'                     , 'source init.vim' ]
-let g:which_key_map['<CR>'] = [ ':Startify'                                       , 'startify' ]
+let g:which_key_map['<CR>'] = [ ':Startify'                                    , 'startify' ]
 let g:which_key_map['/'] = 'comment'
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
@@ -27,6 +27,8 @@ let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   ,
 let g:which_key_map['f'] = [ ':Files'                                          , 'find file' ]
 let g:which_key_map['F'] = [ ':Prettier'                                       , 'format file' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split horizontal']
+let g:which_key_map['o'] = 'new line below'
+let g:which_key_map['O'] = 'new line above'
 let g:which_key_map['r'] = [ ':FloatermNew ranger'                             , 'ranger']
 let g:which_key_map['q'] = [ ':wincmd q'                                       , 'quit window' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']

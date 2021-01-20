@@ -39,6 +39,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 " Better f and t motions
 Plug 'unblevable/quick-scope'
+" Sneak motion
+Plug 'justinmk/vim-sneak'
 " Start screen for vim
 Plug 'mhinz/vim-startify'
 " Never forget key maps
@@ -70,6 +72,7 @@ source $HOME/dotfiles/nvim/plug-config/airline.vim
 source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
 source $HOME/dotfiles/nvim/plug-config/fzf.vim
 source $HOME/dotfiles/nvim/plug-config/quickscope.vim
+source $HOME/dotfiles/nvim/plug-config/sneak.vim
 source $HOME/dotfiles/nvim/plug-config/startify.vim
 source $HOME/dotfiles/nvim/plug-config/whichkey.vim
 source $HOME/dotfiles/nvim/plug-config/floaterm.vim

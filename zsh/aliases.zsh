@@ -16,6 +16,7 @@ alias nimm='vim $HOME/dotfiles/nvim/plug-config/whichkey.vim $HOME/dotfiles/nvim
 alias nimt='vim $HOME/dotfiles/nvim/themes.vim'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
+alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false'
 alias cat='pygmentize -g'
 
 # Git
