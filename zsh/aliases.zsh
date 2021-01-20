@@ -14,10 +14,11 @@ alias nims='vim $HOME/dotfiles/nvim/settings.vim'
 alias nimp='vim $HOME/dotfiles/nvim/plugins.vim'
 alias nimm='vim $HOME/dotfiles/nvim/plug-config/whichkey.vim $HOME/dotfiles/nvim/mappings.vim'
 alias nimt='vim $HOME/dotfiles/nvim/themes.vim'
+alias cat='pygmentize -g'
+alias rgr='ranger'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false'
-alias cat='pygmentize -g'
 
 # Git
 alias gcona='git config user.name "Joshua Ward" ; git config user.email "j2udevelopment@gmail.com"'
