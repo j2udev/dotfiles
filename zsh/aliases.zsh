@@ -45,9 +45,12 @@ alias mkdd='eval $(minikube docker-env)'
 alias mkddu='eval $(minikube docker-env -u)'
 
 # Kubernetes
+alias kdf='kubectl delete -f'
 alias wkgp='watch kubectl get pods -A'
 alias kgpw='kubectl get pods -A -w'
 alias kgpa='kubectl get pods -A'
+alias kgsa='kubectl get service -A'
+alias kgda='kubectl get deployment -A'
 alias kg='kubectl get'
 alias kd='kubectl describe'
 alias ke='kubectl edit'
@@ -101,6 +104,7 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 alias tfwl='terraform workspace list'
 alias tfws='terraform workspace select'
+alias tfo='terraform output -json kubeconfig | jq -r .'
 
 # Gradle
 alias gw='./gradlew'

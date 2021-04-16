@@ -1,4 +1,4 @@
-set background=dark                     " tell vim what the background color looks like
+set background=dark                     " Tell vim what the background color looks like
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set ruler              			            " Show the cursor position all the time
 set mouse=a                             " Enable your mouse

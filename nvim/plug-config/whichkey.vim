@@ -20,6 +20,7 @@ let g:which_key_map['<CR>'] = [ ':Startify'                                    ,
 let g:which_key_map['/'] = 'comment'
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
+let g:which_key_map['\'] = [ '<C-W>|'                                          , 'maximize window' ]
 let g:which_key_map['?'] = 'search help under word'
 let g:which_key_map['C'] = [':Colors'                                          , 'color schemes']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete buffer']
@@ -33,6 +34,7 @@ let g:which_key_map['r'] = [ ':FloatermNew ranger'                             ,
 let g:which_key_map['q'] = [ ':wincmd q'                                       , 'quit window' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split vertical']
+let g:which_key_map['w'] = [ ':StripWhitespace'                                , 'strip whitespace']
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " b is for buffer

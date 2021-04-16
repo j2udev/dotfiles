@@ -15,6 +15,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 " Surround... things
 Plug 'tpope/vim-surround'
+" Repeat for plugins
+Plug 'tpope/vim-repeat'
 " Language support
 Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
