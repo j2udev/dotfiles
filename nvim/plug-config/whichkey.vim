@@ -20,7 +20,8 @@ let g:which_key_map['<CR>'] = [ ':Startify'                                    ,
 let g:which_key_map['/'] = 'comment'
 let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
 let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
-let g:which_key_map['\'] = [ '<C-W>|'                                          , 'maximize window' ]
+let g:which_key_map['\'] = [ '<C-W>|'                                          , 'maximize vertical window' ]
+let g:which_key_map['-'] = [ '<C-W>_'                                          , 'maximize horizontal window' ]
 let g:which_key_map['?'] = 'search help under word'
 let g:which_key_map['C'] = [':Colors'                                          , 'color schemes']
 let g:which_key_map['d'] = [ ':Bdelete'                                        , 'delete buffer']
