@@ -139,6 +139,9 @@ key mappings, and settings can be found in `nvim/plugins.vim`,
 `nvim/mappings.vim`, and `nvim/settings.vim` respectively. A screenshot of my
 current nvim setup is shown below.
 
+> Note: many of my key maps have been abstracted into whichkey configuration
+> which is located in `nvim/plug-config/whichkey.vim`
+
 ![Neovim](assets/nvim-example.png)
 
 ## [FZF (command-line fuzzy finder)](https://github.com/junegunn/fzf)
