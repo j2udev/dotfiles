@@ -5,6 +5,8 @@ if empty(glob('$HOME/.config/nvim/plugged'))
 endif
 
 call plug#begin('$HOME/.config/nvim/plugged')
+" Good support (and tabbing) for (),{},[], etc
+Plug 'jiangmiao/auto-pairs'
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Git
@@ -18,15 +20,17 @@ Plug 'tpope/vim-surround'
 " Repeat for plugins
 Plug 'tpope/vim-repeat'
 " Language support
-Plug 'autozimu/LanguageClient-neovim', {
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
 Plug 'sheerun/vim-polyglot'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 " More color scheme options
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'shaunsingh/moonlight.nvim'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -69,7 +73,8 @@ call plug#end()
 
 source $HOME/dotfiles/nvim/plug-config/coc.vim
 source $HOME/dotfiles/nvim/plug-config/languageclient.vim
-source $HOME/dotfiles/nvim/plug-config/nvcode.vim
+source $HOME/dotfiles/nvim/plug-config/vimgo.vim
+" source $HOME/dotfiles/nvim/plug-config/nvcode.vim
 source $HOME/dotfiles/nvim/plug-config/airline.vim
 source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
 source $HOME/dotfiles/nvim/plug-config/fzf.vim

@@ -1,5 +1,6 @@
 # General
 alias src='source $HOME/.zshrc'
+alias getip='curl -s https://checkip.amazonaws.com | pbcopy'
 alias vi='nvim'
 alias vim='nvim'
 alias zim='vim $HOME/.zshrc'
@@ -37,6 +38,12 @@ alias lt='ls --tree'
 alias java8='export JAVA_HOME=$JAVA_8_HOME; java -version'
 alias java11='export JAVA_HOME=$JAVA_11_HOME; java --version'
 alias java13='export JAVA_HOME=$JAVA_13_HOME; java --version'
+
+# Golang
+alias gorm='go run main.go'
+
+# Python
+alias pip='pip3'
 
 # Minikube
 alias mk='minikube'
@@ -105,6 +112,15 @@ alias tfa='terraform apply'
 alias tfwl='terraform workspace list'
 alias tfws='terraform workspace select'
 alias tfo='terraform output -json kubeconfig | jq -r .'
+
+# Ansible
+alias an='ansible'
+alias anp='ansible-playbook'
+alias ap='ansible-playbook'
+alias ag='ansible-galaxy'
+
+# Yarn
+alias ygl='cat `yarn global dir`/package.json'
 
 # Gradle
 alias gw='./gradlew'

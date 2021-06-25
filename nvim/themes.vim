@@ -1,3 +1,4 @@
 syntax enable
-colorscheme onedark
+colorscheme moonlight
+" colorscheme onedark
 " colorscheme nvcode

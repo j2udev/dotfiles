@@ -1,4 +1,3 @@
-export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$PATH
 export EDITOR="nvim"
 # History
 HISTFILE=~/.zsh_history
@@ -27,4 +26,7 @@ export JAVA_11_HOME=/opt/jdk-11.0.9.1+1/Contents/Home/
 export JAVA_13_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-13.jdk/Contents/Home/
 export JAVA_HOME=$JAVA_11_HOME
 # Go
-export GOPATH=/usr/local/Cellar/go/1.15.6
+export GOROOT="/opt/go"
+export GOBIN="$GOROOT/bin"
+export GOPATH="$HOME/go"
+export PATH="$HOME/bin:/usr/local/bin:$GOBIN:$PATH"

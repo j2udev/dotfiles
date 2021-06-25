@@ -2,6 +2,7 @@
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
     autojump
+    ansible
     fzf
     git
     brew
