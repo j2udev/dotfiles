@@ -100,8 +100,6 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false,
-    // VS Code new marker @ next occurence
-    "<C-d>": false,
     // Copy
     "<C-c>": false,
     // Cut
@@ -125,13 +123,17 @@
   "editor.formatOnPaste": true,
   "editor.lineNumbers": "relative",
   "editor.tabSize": 2,
-  "editor.detectIndentation": false,
   "editor.fontSize": 20,
+  "editor.detectIndentation": false,
+  "editor.suggestSelection": "first",
 
   //workbench
   "workbench.colorTheme": "One Dark Pro",
   "workbench.activityBar.visible": true,
   "workbench.settings.openDefaultKeybindings": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
 
   //files
   "files.eol": "\n",
@@ -172,5 +174,6 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "liveshare.audio.joinCallBehavior": "accept",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
