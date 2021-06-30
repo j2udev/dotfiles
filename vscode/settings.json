@@ -1,0 +1,176 @@
+{
+  //vim
+  "vim.smartRelativeLine": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "after": ["o", "<Esc>"]
+    },
+    {
+      "before": ["<leader>", "O"],
+      "after": ["O", "<Esc>"]
+    },
+    {
+      // emulate sneak with easymotion (no label mode in sneak yet)
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "f"]
+    },
+    {
+      "before": ["S"],
+      "after": ["<leader>", "<leader>", "2", "F"]
+    },
+    {
+      "before": ["<S-h>"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": ["<C-c>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<S-j>"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    // VS Code new marker @ next occurence
+    "<C-d>": false,
+    // Copy
+    "<C-c>": false,
+    // Cut
+    "<C-x>": false,
+    // Paste
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false
+  },
+
+  //neovim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/wardjl/.config/nvim/init.vim",
+
+  //terminal
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.detectLocale": "off",
+
+  //editor
+  "editor.formatOnPaste": true,
+  "editor.lineNumbers": "relative",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.fontSize": 20,
+
+  //workbench
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.activityBar.visible": true,
+  "workbench.settings.openDefaultKeybindings": true,
+
+  //files
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+
+  //git
+  "git.autofetch": true,
+
+  //prettier
+  "prettier.proseWrap": "always",
+
+  //go
+  "go.useLanguageServer": true,
+  "go.autocompleteUnimportedPackages": true,
+  "go.toolsManagement.autoUpdate": true,
+
+  //java
+  "java.semanticHighlighting.enabled": true,
+  "java.debug.settings.console": "internalConsole",
+  "java.project.importOnFirstTimeStartup": "automatic",
+
+  //yaml
+  "yaml.format.enable": true,
+
+  //extensions
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": true,
+
+  //miscellaneous
+  "update.mode": "none",
+  "explorer.confirmDragAndDrop": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "liveshare.audio.joinCallBehavior": "accept",
+  "window.zoomLevel": 1
+}
