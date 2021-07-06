@@ -21,14 +21,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"Plug 'autozimu/LanguageClient-neovim', {
+Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
 Plug 'sheerun/vim-polyglot'
+" Treesitter is a little overkill atm
 " Plug 'nvim-treesitter/nvim-treesitter'
 " More color scheme options
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'shaunsingh/moonlight.nvim'
 " Airline
@@ -74,7 +74,6 @@ call plug#end()
 source $HOME/dotfiles/nvim/plug-config/coc.vim
 source $HOME/dotfiles/nvim/plug-config/languageclient.vim
 source $HOME/dotfiles/nvim/plug-config/vimgo.vim
-" source $HOME/dotfiles/nvim/plug-config/nvcode.vim
 source $HOME/dotfiles/nvim/plug-config/airline.vim
 source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
 source $HOME/dotfiles/nvim/plug-config/fzf.vim
