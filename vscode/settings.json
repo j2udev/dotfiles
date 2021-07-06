@@ -1,5 +1,6 @@
 {
   //vim
+  "vim.leader": "<space>",
   "vim.smartRelativeLine": true,
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -24,38 +25,41 @@
       "before": ["<leader>", "O"],
       "after": ["O", "<Esc>"]
     },
-    {
-      // emulate sneak with easymotion (no label mode in sneak yet)
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "2", "f"]
+    { // emulate sneak with easymotion (no label mode in sneak yet)
+      "before": [ "s" ],
+      "after": [ "<leader>", "<leader>", "2", "f" ]
     },
     {
-      "before": ["S"],
-      "after": ["<leader>", "<leader>", "2", "F"]
+      "before": [ "S" ],
+      "after": [ "<leader>", "<leader>", "2", "F" ]
     },
     {
-      "before": ["<S-h>"],
+      "before": ["<S-k>"],
       "commands": ["editor.action.showHover"]
-    }
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    },
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
+      "before": ["j","k"],
       "after": ["<Esc>"]
     },
     {
-      "before": ["k", "j"],
+      "before": ["k","j"],
       "after": ["<Esc>"]
-    }
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
-      "after": [">", "g", "v"]
+      "after": [">","g","v"]
     },
     {
       "before": ["<"],
-      "after": ["<", "g", "v"]
+      "after": ["<","g","v"]
     },
     {
       "before": ["<C-c>"],
@@ -68,47 +72,104 @@
     {
       "before": ["<S-j>"],
       "commands": ["editor.action.moveLinesDownAction"]
-    }
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
+    },
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
+    },
     {
       "before": ["<C-n>"],
       "commands": [":nohl"]
     },
     {
-      "before": ["<leader>", "v"],
+      "before": ["<leader>","\\"],
       "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": ["<leader>", "e"],
+      "before": ["<leader>","-"],
+      "commands": ["workbench.action.splitEditorOrthogonal"]
+    },
+    {
+      "before": ["<leader>","q"],
+      "commands": ["workbench.action.closeGroup"]
+    },
+    {
+      "before": ["<leader>","d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>","e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "f"],
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>","f"],
       "commands": ["revealInExplorer"]
     },
     {
-      "before": ["<leader>", "h"],
+      "before": ["<leader>","h"],
       "after": ["_"]
     },
     {
-      "before": ["<leader>", "l"],
+      "before": ["<leader>","l"],
       "after": ["$"]
-    }
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
+    },
   ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false,
-    // Copy
-    "<C-c>": false,
-    // Cut
-    "<C-x>": false,
-    // Paste
-    "<C-v>": false,
-    "<C-z>": false,
-    "<C-y>": false
-  },
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["whichkey.show"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p","g","v", "y"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+  ],
 
   //neovim
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
@@ -116,6 +177,7 @@
 
   //terminal
   "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.detectLocale": "off",
 
@@ -126,14 +188,15 @@
   "editor.fontSize": 20,
   "editor.detectIndentation": false,
   "editor.suggestSelection": "first",
+  "editor.renderLineHighlight": "all",
 
   //workbench
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "BeardedTheme Black & Ruby",
   "workbench.activityBar.visible": true,
   "workbench.settings.openDefaultKeybindings": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#ff000020"
+  }
 
   //files
   "files.eol": "\n",
@@ -175,5 +238,9 @@
   "telemetry.enableCrashReporter": false,
   "liveshare.audio.joinCallBehavior": "accept",
   "window.zoomLevel": 1,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "redhat.telemetry.enabled": false,
 }
