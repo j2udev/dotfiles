@@ -18,10 +18,10 @@
       "before": ["<S-tab>"],
       "commands": ["workbench.action.previousEditor"]
     },
-    {
-      "before": [":"],
-      "commands": ["vim.showQuickpickCmdLine",]
-    },
+    // {
+    //   "before": [":"],
+    //   "commands": ["vim.showQuickpickCmdLine",]
+    // },
     {
       "before": ["<leader>", "o"],
       "after": ["o", "<Esc>"]
@@ -30,13 +30,13 @@
       "before": ["<leader>", "O"],
       "after": ["O", "<Esc>"]
     },
-    { // emulate sneak with easymotion (no label mode in sneak yet)
-      "before": [ "s" ],
-      "after": [ "<leader>", "<leader>", "2", "f" ]
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "f"]
     },
     {
-      "before": [ "S" ],
-      "after": [ "<leader>", "<leader>", "2", "F" ]
+      "before": ["S"],
+      "after": ["<leader>", "<leader>", "2", "F"]
     },
     {
       "before": ["<S-k>"],
@@ -45,26 +45,26 @@
     {
       "before": ["<leader>", "/"],
       "commands": ["editor.action.commentLine"]
-    },
+    }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j","k"],
+      "before": ["j", "k"],
       "after": ["<Esc>"]
     },
     {
-      "before": ["k","j"],
+      "before": ["k", "j"],
       "after": ["<Esc>"]
-    },
+    }
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
-      "after": [">","g","v"]
+      "after": [">", "g", "v"]
     },
     {
       "before": ["<"],
-      "after": ["<","g","v"]
+      "after": ["<", "g", "v"]
     },
     {
       "before": ["<C-c>"],
@@ -81,11 +81,11 @@
     {
       "before": ["<leader>", "/"],
       "commands": ["editor.action.commentLine"]
-    },
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
+      "before": [","],
       "commands": ["whichkey.show"]
     },
     {
@@ -93,23 +93,23 @@
       "commands": [":nohl"]
     },
     {
-      "before": ["<leader>","\\"],
+      "before": ["<leader>", "\\"],
       "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": ["<leader>","-"],
+      "before": ["<leader>", "-"],
       "commands": ["workbench.action.splitEditorOrthogonal"]
     },
     {
-      "before": ["<leader>","q"],
+      "before": ["<leader>", "q"],
       "commands": ["workbench.action.closeGroup"]
     },
     {
-      "before": ["<leader>","d"],
+      "before": ["<leader>", "d"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
-      "before": ["<leader>","e"],
+      "before": ["<leader>", "e"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
@@ -129,15 +129,15 @@
       "commands": ["workbench.action.focusAboveGroup"]
     },
     {
-      "before": ["<leader>","f"],
+      "before": ["<leader>", "f"],
       "commands": ["revealInExplorer"]
     },
     {
-      "before": ["<leader>","h"],
+      "before": ["<leader>", "h"],
       "after": ["_"]
     },
     {
-      "before": ["<leader>","l"],
+      "before": ["<leader>", "l"],
       "after": ["$"]
     },
     {
@@ -155,16 +155,16 @@
     {
       "before": ["C"],
       "after": ["\"", "_", "C"]
-    },
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
+      "before": [","],
       "commands": ["whichkey.show"]
     },
     {
       "before": ["p"],
-      "after": ["p","g","v", "y"]
+      "after": ["p", "g", "v", "y"]
     },
     {
       "before": ["d"],
@@ -173,12 +173,10 @@
     {
       "before": ["c"],
       "after": ["\"", "_", "c"]
-    },
+    }
   ],
 
   //whichkey
-  "whichkey.delay": 0,
-  "whichkey.showIcons": true,
   "whichkey.bindings": [
     {
       "key": ";",
@@ -202,7 +200,7 @@
     },
     {
       "key": "b",
-      "name": "$(multiple-windows) Buffers/Editors...",
+      "name": "$(multiple-windows) +Buffers/Editors",
       "type": "bindings",
       "bindings": [
         {
@@ -285,9 +283,15 @@
     },
     {
       "key": "d",
-      "name": "$(debug-alt) Debug...",
+      "name": "$(debug-alt) +Debug",
       "type": "bindings",
       "bindings": [
+        {
+          "key": "g",
+          "name": "Debug all tests",
+          "type": "command",
+          "command": "go.debug.cursor"
+        },
         {
           "key": "d",
           "name": "Start debug",
@@ -320,7 +324,7 @@
         },
         {
           "key": "R",
-          "name": "Restart ebug",
+          "name": "Restart debug",
           "type": "command",
           "command": "workbench.action.debug.restart"
         },
@@ -331,16 +335,28 @@
           "command": "workbench.action.debug.stepInto"
         },
         {
-          "key": "s",
+          "key": "o",
           "name": "Step over",
           "type": "command",
           "command": "workbench.action.debug.stepOver"
         },
         {
-          "key": "o",
+          "key": "O",
           "name": "Step out",
           "type": "command",
           "command": "workbench.action.debug.stepOut"
+        },
+        {
+          "key": "D",
+          "name": "Disable all breakpoints",
+          "type": "command",
+          "command": "workbench.debug.viewlet.action.disableAllBreakpoints"
+        },
+        {
+          "key": "E",
+          "name": "Enable all breakpoints",
+          "type": "command",
+          "command": "workbench.debug.viewlet.action.enableAllBreakpoints"
         },
         {
           "key": "b",
@@ -388,7 +404,7 @@
     },
     {
       "key": "f",
-      "name": "$(replace) Find & Replace...",
+      "name": "$(replace) +Find & Replace",
       "type": "bindings",
       "bindings": [
         {
@@ -414,7 +430,7 @@
     },
     {
       "key": "g",
-      "name": "$(git-branch) Git...",
+      "name": "$(git-branch) +Git",
       "type": "bindings",
       "bindings": [
         {
@@ -570,6 +586,13 @@
           "name": "Unstage",
           "type": "command",
           "command": "git.unstage"
+        },
+        {
+          "key": "v",
+          "name": "View SCM",
+          "command": "workbench.view.scm",
+          "type": "command",
+          "when": "workbench.scm.active"
         }
       ]
     },
@@ -581,7 +604,7 @@
     },
     {
       "key": "i",
-      "name": "$(add) Insert...",
+      "name": "$(add) +Insert",
       "type": "bindings",
       "bindings": [
         {
@@ -606,7 +629,7 @@
     },
     {
       "key": "l",
-      "name": "$(lightbulb) LSP...",
+      "name": "$(lightbulb) +LSP",
       "type": "bindings",
       "bindings": [
         {
@@ -740,7 +763,7 @@
     },
     {
       "key": "m",
-      "name": "$(bookmark) Mark...",
+      "name": "$(bookmark) +Mark",
       "type": "bindings",
       "bindings": [
         {
@@ -791,13 +814,12 @@
         }
       ]
     },
-    // {
-    //   //TODO: figure out why this isn't working
-    //   "key": "M",
-    //   "name": "Minimap",
-    //   "type": "command",
-    //   "command": "editor.action.toggleMinimap"
-    // },
+    {
+      "key": "M",
+      "name": "$(file-media) Minimap",
+      "type": "command",
+      "command": "editor.action.toggleMinimap"
+    },
     // //TODO: figure out a way to toggle vim search highlighting
     // {
     //   "key": "n",
@@ -807,7 +829,7 @@
     // },
     {
       "key": "o",
-      "name": "$(folder-opened) Open...",
+      "name": "$(folder-opened) +Open",
       "type": "bindings",
       "bindings": [
         {
@@ -832,7 +854,7 @@
     },
     {
       "key": "p",
-      "name": "$(arrow-down) Peek...",
+      "name": "$(arrow-down) +Peek",
       "type": "bindings",
       "bindings": [
         {
@@ -878,7 +900,7 @@
     },
     {
       "key": "s",
-      "name": "$(search) Search...",
+      "name": "$(search) +Search",
       "type": "bindings",
       "bindings": [
         {
@@ -897,7 +919,7 @@
     },
     {
       "key": "S",
-      "name": "$(menu) Show...",
+      "name": "$(menu) +Show",
       "type": "bindings",
       "bindings": [
         {
@@ -958,7 +980,7 @@
     },
     {
       "key": "t",
-      "name": "$(terminal) Terminal...",
+      "name": "$(terminal) +Terminal",
       "type": "bindings",
       "bindings": [
         {
@@ -978,7 +1000,7 @@
     },
     {
       "key": "u",
-      "name": "$(book) UI Toggles...",
+      "name": "$(book) +UI Toggles",
       "type": "bindings",
       "bindings": [
         {
@@ -1033,7 +1055,7 @@
     },
     {
       "key": "w",
-      "name": "$(multiple-windows) Window...",
+      "name": "$(multiple-windows) +Window",
       "type": "bindings",
       "bindings": [
         {
@@ -1118,7 +1140,7 @@
     },
     {
       "key": "y",
-      "name": "$(sync) Sync...",
+      "name": "$(sync) +Sync",
       "type": "bindings",
       "bindings": [
         {
@@ -1143,6 +1165,16 @@
     }
   ],
 
+  "customizeUI.stylesheet": {
+    // Let the quick pick take the full window height, so that more bindings
+    // are visible.
+    ".quick-input-widget > .quick-input-list > .monaco-list": "max-height: none !important;",
+    // Colorize icons uniformly and add some extra padding
+    ".quick-input-widget > .quick-input-list .codicon": "color: #83a598 !important; padding-right: 5px;",
+    // Colorize entries starting with a `+` differently
+    ".quick-input-widget > .quick-input-list .monaco-list-row[aria-label*=\" +\"] .label-description": "color: #d10000;"
+  },
+
   //neovim
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/wardjl/.config/nvim/init.vim",
@@ -1161,14 +1193,10 @@
   "editor.detectIndentation": false,
   "editor.suggestSelection": "first",
   "editor.renderLineHighlight": "all",
-
-  //workbench
-  "workbench.colorTheme": "BeardedTheme Black & Ruby",
-  "workbench.activityBar.visible": true,
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#ff000020"
-  }
+  },
 
   //files
   "files.eol": "\n",
@@ -1202,21 +1230,6 @@
   "extensions.autoUpdate": false,
   "extensions.autoCheckUpdates": true,
 
-  //customizeUI
-  "customizeUI.stylesheet": {
-      // Let the quick pick take the full window height, so that more bindings
-      // are visible.
-      ".quick-input-widget > .quick-input-list > .monaco-list":
-          "max-height: none !important;",
-      // Colorize icons uniformly and add some extra padding
-      ".quick-input-widget > .quick-input-list .codicon":
-          "color: #83a598 !important; padding-right: 5px;",
-      // Colorize entries starting with a `+` differently
-      ".quick-input-widget > .quick-input-list .monaco-list-row[aria-label*=\" +\"] .label-description":
-          "color: #8ec07c;",
-  }
-
-
   //miscellaneous
   "update.mode": "none",
   "explorer.confirmDragAndDrop": false,
@@ -1224,10 +1237,13 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
   "liveshare.audio.joinCallBehavior": "accept",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 3,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "redhat.telemetry.enabled": false,
+  "workbench.colorTheme": "Bearded Theme Black & Ruby",
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "workbench.iconTheme": "bearded-icons"
 }
