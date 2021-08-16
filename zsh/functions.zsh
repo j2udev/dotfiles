@@ -43,3 +43,12 @@ j2u() { docker run -it \
         -v /var/run/docker.sock/:/var/run/docker.sock \
         -v "$PWD":/root/dev \
         j2udevelopment/dev-env /bin/zsh }
+
+# Git
+mergeUpstream() {
+  git fetch upstream
+  git checkout "$1"
+  git pull
+  git merge upstream/"$1"
+}
+
