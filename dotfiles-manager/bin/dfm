@@ -1,0 +1,73 @@
+#!/bin/bash
+set -e
+DFM_DIR=$(cd "$(dirname "$(readlink "$0" || echo "$0")")"/.. && pwd)
+export DFM_DIR
+DFM_SRC="$DFM_DIR"/src
+export DFM_SRC
+# shellcheck source=/dev/null
+. "$DFM_DIR"/src/functions/common-functions.sh
+
+usage() {
+  echo "
+Dotfiles Manager
+
+Version: $(cat "$DFM_DIR"/VERSION)
+
+Usage:
+  dfm [command]
+
+Commands:
+  creds, credentials            Set up credentials for various tools
+  docker                        Interact with a dev container
+  install                       Install dev environment tools
+  uninstall                     Uninstall dev environment tools
+  vagrant                       Interact with a dev virtual machine
+  version                       Check the versions of dev environment tools
+
+Flags:
+  -h, --help                    Show help for the specified command
+  "
+  exit 1
+}
+
+if [ -f "$DFM_DIR"/config/config.sh ] ; then
+  printStatus "Detected custom dfm config, exporting..."
+  # shellcheck source=/dev/null
+  . "$DFM_DIR"/config/config.sh
+fi
+
+case "$1" in
+  creds|credentials)
+    shift
+    printStatus "TODO" --status warn
+    ;;
+  docker)
+    shift
+    "$DFM_SRC/commands/docker.sh" "$@"
+    ;;
+  -h|--help)
+    usage
+    exit 1
+    ;;
+  install)
+    shift
+    "$DFM_SRC/commands/install.sh" "$@"
+    ;;
+  uninstall)
+    shift
+    printStatus "TODO" --status warn
+    ;;
+  vagrant)
+    shift
+    printStatus "TODO" --status warn
+    ;;
+  version)
+    shift
+    "$DFM_SRC/commands/version.sh" "$@"
+    ;;
+  *)
+    [ -n "$1" ] && printStatus "Unknown Option: $1" --status error
+    usage
+    exit 1
+    ;;
+esac

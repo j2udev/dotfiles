@@ -19,13 +19,7 @@
   "list.selectedSignText": " ",
 
   // autoformat
-  "coc.preferences.formatOnSaveFiletypes": [
-    "markdown",
-    "javascript",
-    "html",
-    "yaml",
-    "json"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["markdown", "html", "yaml", "json"],
   "coc.preferences.hoverTarget": "float",
 
   // explorer

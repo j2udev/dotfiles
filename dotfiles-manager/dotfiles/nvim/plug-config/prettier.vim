@@ -35,6 +35,9 @@ let g:prettier#config#html_whitespace_sensitivity = 'css'
 " default: 'false'
 let g:prettier#config#require_pragma = 'false'
 
+" let g:prettier#config#single_quote = 'true'
+" let g:prettier#config#trailing_comma = 'all'
+
 " Define the flavor of line endings
 " lf|crlf|cr|all
 " defaut: 'lf'

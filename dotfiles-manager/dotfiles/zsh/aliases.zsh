@@ -1,6 +1,7 @@
 # General
 alias src='source $HOME/.zshrc'
 alias getip='curl -s https://checkip.amazonaws.com | pbcopy'
+alias getlocalip='ifconfig | grep "inet 192" | awk '{print $2}' | pbcopy'
 alias vi='nvim'
 alias vim='nvim'
 alias zim='vim $HOME/.zshrc'
