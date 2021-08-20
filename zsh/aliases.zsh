@@ -1,6 +1,7 @@
 # General
 alias src='source $HOME/.zshrc'
 alias getip='curl -s https://checkip.amazonaws.com | pbcopy'
+alias getlocalip="ifconfig | grep 'inet 192' | awk '{print $2}' | pbcopy"
 alias vi='nvim'
 alias vim='nvim'
 alias zim='vim $HOME/.zshrc'
@@ -25,6 +26,8 @@ alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnable
 alias gcona='git config user.name "Joshua Ward" ; git config user.email "j2udevelopment@gmail.com"'
 alias gconu='git config --unset user.name ; git config --unset user.email'
 alias gconl='git config -l'
+alias gconc='git config --global credential.helper cache'
+alias gconcu='git config --global --unset credential.helper'
 alias lzg='lazygit'
 
 # LSD
