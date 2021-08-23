@@ -267,6 +267,17 @@ installKubectl() {
     "https://storage.googleapis.com/kubernetes-release/release/v$DFM_KUBECTL_VERSION/bin/$DFM_OPERATING_SYSTEM/amd64/kubectl"
 }
 
+installLsd() {
+  installMessages "Lsd"
+  if [[ "$DFM_INSTALL_VERSION" && ! "$1" ]] ; then
+    local DFM_LSD_VERSION="$DFM_INSTALL_VERSION"
+  fi
+  curlAndUntar \
+    "https://github.com/Peltoche/lsd/releases/download/$DFM_LSD_VERSION/lsd-$DFM_LSD_VERSION-x86_64-unknown-linux-gnu.tar.gz"
+  symlinkBinary \
+    "$DFM_INSTALL_PATH/lsd-0.20.1-x86_64-unknown-linux-gnu/lsd"
+}
+
 # shellcheck disable=SC2086
 installMinikube() {
   installMessages "Minikube"
@@ -283,6 +294,11 @@ installNeovim() {
   installMessages "Neovim"
   if [[ "$DFM_INSTALL_VERSION" && ! "$1" ]] ; then
     local DFM_NEOVIM_VERSION="$DFM_INSTALL_VERSION"
+  fi
+  if "$DFM_INSTALL_INIT" ; then
+    [[ -d "$HOME"/.config/nvim ]] || mkdir -p "$HOME"/.config/nvim
+    ln -fs "$DFM_DOTFILES"/nvim/init.vim "$HOME"/.config/nvim/init.vim
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   fi
   [ "$DFM_OPERATING_SYSTEM" == "darwin" ] && local DFM_OPERATING_SYSTEM="macos"
   [ "$DFM_OPERATING_SYSTEM" == "linux" ] && local DFM_OPERATING_SYSTEM="linux64"
@@ -304,52 +320,14 @@ installNode() {
     "$DFM_INSTALL_PATH/node-v$DFM_NODE_VERSION-$DFM_OPERATING_SYSTEM-x64/bin/*"
 }
 
-installZsh() {
-  installMessages "Zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh-bin/master/install)" "" -d /usr/local -e yes
-  if [ ! -f "$HOME"/.zshrc ] || "$DFM_INSTALL_OVERWRITE" ; then
-    cp -f "$DFM_DIR"/config/.zshrc "$HOME"/.zshrc
-  else
-    printStatus ".zshrc already exists..." --status warn
-  fi
-  if [ ! -f "$HOME"/.p10k.zsh ] || "$DFM_INSTALL_OVERWRITE" ; then
-    cp -f "$DFM_DIR"/.dotfiles/p10k/usa-p10k.zsh "$HOME"/.p10k.zsh
-  else
-    printStatus ".p10k.zsh already exists..." --status warn
-  fi
-  if [ ! -d "$HOME"/.oh-my-zsh ] || "$DFM_INSTALL_OVERWRITE" ; then
-    rm -rf "$HOME"/.oh-my-zsh
-    yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-  else
-    printStatus ".oh-my-zsh already exists..." --status warn
-  fi
-
-
-  # local arg_arr
-  # installMessages "OhMyZsh"
-  # yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-  # if "$DFM_INSTALL_OVERWRITE" ; then
-  #   arg_arr=(
-  #   "rm -rf /usr/local/bin/zsh"
-  #   "&&"
-  #   "rm -rf $HOME/.oh-my-zsh"
-  #   "&&"
-  #   yes "|" sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --skip-chsh)
-  # else
-  #   arg_arr=(yes "|" sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --skip-chsh --keep-zshrc)
-  # fi
-  # if "$DFM_INSTALL_DRY_RUN" ; then
-  #   echo "${arg_arr[@]}"
-  # else
-  #   eval "${arg_arr[@]}"
-  # fi
-}
-
 # shellcheck disable=SC2086
 installPowerlevel10k() {
   installMessages "Powerlevel10k"
   if [[ "$DFM_INSTALL_VERSION" && ! "$1" ]] ; then
     local DFM_P10K_VERSION="$DFM_INSTALL_VERSION"
+  fi
+  if "$DFM_INSTALL_INIT" ; then
+    cp "$DFM_DOTFILES"/p10k/usa-p10k.zsh "$HOME"/.p10k.zsh
   fi
   # if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ] ; then
   #   gitCheckout "v$DFM_P10K_VERSION"
@@ -406,5 +384,20 @@ installYarn() {
     echo "${yarn_arr[@]}"
   else
     eval "${yarn_arr[@]}"
+  fi
+}
+
+installZsh() {
+  installMessages "Zsh"
+  if "$DFM_INSTALL_INIT" ; then
+    cp "$DFM_DOTFILES"/zsh/.zshrc "$HOME"/.zshrc
+  fi
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh-bin/master/install)" "" -d /usr/local -e yes
+  if [ ! -d "$HOME"/.oh-my-zsh ] || "$DFM_INSTALL_OVERWRITE" ; then
+    rm -rf "$HOME"/.oh-my-zsh
+    yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+    gitClone "v$DFM_ZSH_AUTOSUGGESTIONS_VERSION" "https://github.com/zsh-users/zsh-autosuggestions" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+  else
+    printStatus ".oh-my-zsh already exists..." --status warn
   fi
 }

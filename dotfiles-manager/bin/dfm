@@ -4,6 +4,8 @@ DFM_DIR=$(cd "$(dirname "$(readlink "$0" || echo "$0")")"/.. && pwd)
 export DFM_DIR
 DFM_SRC="$DFM_DIR"/src
 export DFM_SRC
+DFM_DOTFILES="$DFM_DIR"/dotfiles
+export DFM_DOTFILES
 # shellcheck source=/dev/null
 . "$DFM_DIR"/src/functions/common-functions.sh
 

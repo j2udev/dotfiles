@@ -31,8 +31,8 @@ dockerRun() {
       --network host \
       --name "$DFM_DOCKER_CONTAINER_NAME" \
       -v /var/run/docker.sock/:/var/run/docker.sock \
-      -v "$DFM_DOCKER_MOUNT_PATH":/home/docker \
       "$DFM_DOCKER_IMAGE_NAME" /bin/zsh
+      # -v "$DFM_DOCKER_MOUNT_PATH":/home/docker \
   else
     docker run -it \
       --network host \

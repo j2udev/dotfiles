@@ -1,21 +1,21 @@
 # General
 alias src='source $HOME/.zshrc'
 alias getip='curl -s https://checkip.amazonaws.com | pbcopy'
-alias getlocalip='ifconfig | grep "inet 192" | awk '{print $2}' | pbcopy'
+alias getlocalip="ifconfig | grep 'inet 192' | awk '{print $2}' | pbcopy"
 alias vi='nvim'
 alias vim='nvim'
-alias zim='vim $HOME/.zshrc'
-alias dim='vim $HOME/dotfiles/zsh/.zshrc'
-alias dima='vim $HOME/dotfiles/zsh/aliases.zsh'
-alias dime='vim $HOME/dotfiles/zsh/exports.zsh'
-alias dimf='vim $HOME/dotfiles/zsh/functions.zsh'
-alias dimp='vim $HOME/dotfiles/zsh/plugins.zsh'
-alias dimm='vim $HOME/dotfiles/zsh/misc.zsh'
-alias nim='vim $HOME/dotfiles/nvim/init.vim'
-alias nims='vim $HOME/dotfiles/nvim/settings.vim'
-alias nimp='vim $HOME/dotfiles/nvim/plugins.vim'
-alias nimm='vim $HOME/dotfiles/nvim/plug-config/whichkey.vim $HOME/dotfiles/nvim/mappings.vim'
-alias nimt='vim $HOME/dotfiles/nvim/themes.vim'
+alias zim='nvim $HOME/.zshrc'
+alias dim='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/zshrc'
+alias dima='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/aliases.zsh'
+alias dime='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/exports.zsh'
+alias dimf='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/functions.zsh'
+alias dimp='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/plugins.zsh'
+alias dimm='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/zsh/misc.zsh'
+alias nim='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/init.vim'
+alias nims='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/settings.vim'
+alias nimp='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plugins.vim'
+alias nimm='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/whichkey.vim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/mappings.vim'
+alias nimt='nvim $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/themes.vim'
 alias cat='pygmentize -g'
 alias rgr='ranger'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
@@ -26,14 +26,15 @@ alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnable
 alias gcona='git config user.name "Joshua Ward" ; git config user.email "j2udevelopment@gmail.com"'
 alias gconu='git config --unset user.name ; git config --unset user.email'
 alias gconl='git config -l'
+alias gconc='git config --global credential.helper cache'
+alias gconcu='git config --global --unset credential.helper'
 alias lzg='lazygit'
 
 # LSD
 alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+alias l='ls -lah'
 alias lt='ls --tree'
+alias lta='ls -a --tree'
 
 # Java
 alias java8='export JAVA_HOME=$JAVA_8_HOME; java -version'
@@ -121,7 +122,6 @@ alias tfo='terraform output -json kubeconfig | jq -r .'
 
 # Ansible
 alias an='ansible'
-alias anp='ansible-playbook'
 alias ap='ansible-playbook'
 alias ag='ansible-galaxy'
 
@@ -163,7 +163,6 @@ alias hbv='cd $(brew --repo) && git checkout tags/2.4.16 && cd -'
 # Recording
 alias arec='asciinema rec'
 alias aplay='asciinema play'
-alias trec='termtosvg -t ~/dotfiles/terminal-recorders/termtosvg/p10k-template.svg'
 
 # Hex Code Util
 alias hexs='xxd -psd'

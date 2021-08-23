@@ -2,6 +2,8 @@
 unsetopt inc_append_history
 # Reloads the history whenever you use it
 unsetopt share_history
+# Set up autocompletion for dfm
+fpath=($(dirname $(readlink $(which dfm))) $fpath)
 # Enables auto-completion
 autoload -U compinit && compinit
 # Let pyenv set the Python version

@@ -23,6 +23,7 @@ Flags:
   -C, --curl-flags              Specify additional flags for the curl installs
   -r, --dry-run                 Perform a dry run for the specified arguments
   -h, --help                    Show help for the specified command
+  -i, --init            Override the default install path
   -I, --install-path            Override the default install path
   -l, --list                    List the available command options
   -o, --overwrite               Overwrite existing tool installations if encountered
@@ -48,6 +49,7 @@ Options:
   java                          Install Java
   kind                          Install Kind
   kubectl                       Install Kubectl
+  lsd                           Install Lsd
   minikube                      Install Minikube
   nvim, neovim                  Install Neovim
   node, nodejs                  Install NodeJS
@@ -62,7 +64,7 @@ Options:
 shopt -s extglob
 
 option_counter=0
-booleanFlagRegex='^[\-][AaorsV]{1,6}$'
+booleanFlagRegex='^[\-][AaiorsV]{1,7}$'
 
 booleanFlagCheck() {
   if [[ "$1" =~ [A] ]] ; then
@@ -70,6 +72,9 @@ booleanFlagCheck() {
   fi
   if [[ "$1" =~ [a] ]] ; then
       export DFM_INSTALL_VERSION_CHECK=true
+  fi
+  if [[ "$1" =~ [i] ]] ; then
+      export DFM_INSTALL_INIT=true
   fi
   if [[ "$1" =~ [o] ]] ; then
       export DFM_INSTALL_OVERWRITE=true
@@ -148,6 +153,11 @@ while [ "$#" -gt 0 ]; do
         (( option_counter++ ))
         shift
         ;;
+      -i|--init)
+        export DFM_INSTALL_INIT=true
+        (( option_counter++ ))
+        shift
+        ;;
       -I|--install-path)
         shift
         case $1 in
@@ -194,6 +204,11 @@ while [ "$#" -gt 0 ]; do
       -l|--list)
         list_options
         exit 1
+        ;;
+      lsd)
+        export DFM_INSTALL_LSD=true
+        (( option_counter++ ))
+        shift
         ;;
       minikube)
         export DFM_INSTALL_MINIKUBE=true
@@ -381,6 +396,9 @@ if "$DFM_INSTALL_ALL" || "$DFM_INSTALL_FZF" ; then
 fi
 if "$DFM_INSTALL_ALL" || "$DFM_INSTALL_P10K" ; then
   installPowerlevel10k
+fi
+if "$DFM_INSTALL_ALL" || "$DFM_INSTALL_LSD" ; then
+  installLsd
 fi
 if "$DFM_INSTALL_ALL" || "$DFM_INSTALL_JAVA" ; then
   if "$DFM_INSTALL_OVERWRITE" || "$DFM_INSTALL_DRY_RUN" ; then

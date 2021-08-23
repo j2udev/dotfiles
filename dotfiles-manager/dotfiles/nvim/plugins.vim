@@ -1,5 +1,5 @@
 if empty(glob('$HOME/.config/nvim/plugged'))
-  silent !curl -fLo $HOME/dotfiles/nvim/autoload/plug.vim --create-dirs
+  silent !curl -fLo $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
@@ -71,17 +71,17 @@ Plug 'blueyed/vim-diminactive'
 Plug 'airblade/vim-rooter'
 call plug#end()
 
-source $HOME/dotfiles/nvim/plug-config/coc.vim
-source $HOME/dotfiles/nvim/plug-config/languageclient.vim
-source $HOME/dotfiles/nvim/plug-config/vimgo.vim
-source $HOME/dotfiles/nvim/plug-config/airline.vim
-source $HOME/dotfiles/nvim/plug-config/ripgrep.vim
-source $HOME/dotfiles/nvim/plug-config/fzf.vim
-source $HOME/dotfiles/nvim/plug-config/quickscope.vim
-source $HOME/dotfiles/nvim/plug-config/sneak.vim
-source $HOME/dotfiles/nvim/plug-config/startify.vim
-source $HOME/dotfiles/nvim/plug-config/whichkey.vim
-source $HOME/dotfiles/nvim/plug-config/floaterm.vim
-source $HOME/dotfiles/nvim/plug-config/goyo.vim
-source $HOME/dotfiles/nvim/plug-config/prettier.vim
-source $HOME/dotfiles/nvim/plug-config/markdownpreview.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/coc.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/languageclient.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/vimgo.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/airline.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/ripgrep.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/fzf.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/quickscope.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/sneak.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/startify.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/whichkey.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/floaterm.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/goyo.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/prettier.vim
+source $XDG_CONFIG_HOME/dotfiles-manager/dotfiles/nvim/plug-config/markdownpreview.vim

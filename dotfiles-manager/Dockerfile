@@ -28,25 +28,40 @@ RUN sudo apt-get update && sudo apt-get install -y \
     zsh \
     watch \
     lsof \
+    ripgrep \
+    jq \
+    htop \
+    autojump \
+    python3-pygments \
     apt-transport-https \
     ca-certificates \
     gnupg2 \
     software-properties-common
-# Copy dfm to the default install path
-COPY . /opt/dotfiles-manager/
-RUN cp /opt/dotfiles-manager/config/.zshrc /home/docker/.zshrc
-RUN cp -r /opt/dotfiles-manager/.dotfiles /home/docker/dotfiles/
-# Symlink dfm to the path to be used anywhere
-RUN sudo ln -fs /opt/dotfiles-manager/bin/dfm /usr/local/bin/dfm
+
 # Take ownership of the common installation directories
 RUN sudo chown -R docker:docker /opt
 RUN sudo chown -R docker:docker /usr/local
+# Set working directory
+WORKDIR /home/docker
+# Copy dfm to standard XDG_CONFIG_HOME
+RUN mkdir .config
+COPY --chown=docker:docker . .config/dotfiles-manager
+# COPY . /opt/dotfiles-manager/
+# RUN cp -r /opt/dotfiles-manager/dotfiles /home/docker/.config/dotfiles/
+# RUN cp .config/dotfiles-manager/dotfiles/zsh/.zshrc /home/docker/.zshrc
+# RUN cp /opt/dotfiles-manager/dotfiles/zsh/.zshrc /home/docker/.zshrc
+# RUN cp -r /opt/dotfiles-manager/.dotfiles /home/docker/dotfiles/
+
+# Symlink dfm to the path to be used anywhere
+RUN ln -fs /home/docker/.config/dotfiles-manager/bin/dfm /usr/local/bin/dfm
+# RUN sudo ln -fs /opt/dotfiles-manager/bin/dfm /usr/local/bin/dfm
 # Install development environment
-RUN dfm install docker -sV && \
-    dfm install zsh && \
-    dfm install neovim -V && \
-    dfm install fzf -V && \
-    dfm install p10k
+RUN dfm install zsh -i && \
+    dfm install neovim -i && \
+    dfm install fzf && \
+    dfm install p10k -i && \
+    dfm install lsd
+    # dfm install docker -sV && \
     # dfm install istio -V && \
     # dfm install java -V && \
     # dfm install gradle -V && \
@@ -60,6 +75,3 @@ RUN dfm install docker -sV && \
     # dfm install terraform -V && \
     # dfm install golang -V && \
     # dfm install hugo -V && \
-
-# Set working directory
-WORKDIR /home/docker
