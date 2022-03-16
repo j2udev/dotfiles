@@ -1,0 +1,11 @@
+# For more zsh configuration variables visit https://github.com/ohmyzsh/ohmyzsh/blob/master/templates/zshrc.zsh-template
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/exports.zsh ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/exports.zsh
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/aliases.zsh ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/aliases.zsh
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/functions.zsh ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/functions.zsh
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/plugins.zsh ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/plugins.zsh
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/misc.zsh ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/misc.zsh
+[[ -f $HOME/.p10k.zsh ]] && . $HOME/.p10k.zsh
+[[ -f $ZSH/oh-my-zsh.sh ]] && . $ZSH/oh-my-zsh.sh
+
