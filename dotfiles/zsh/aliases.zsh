@@ -1,7 +1,6 @@
 # General
 alias src='source $HOME/.zshrc'
 alias getip='curl -s https://checkip.amazonaws.com | pbcopy'
-alias getlocalip="ifconfig | grep 'inet 192' | awk '{print $2}' | pbcopy"
 alias vi='nvim'
 alias vim='nvim'
 alias zim='nvim $HOME/.zshrc'
@@ -16,8 +15,6 @@ alias nims='nvim $XDG_CONFIG_HOME/dotfiles/nvim/settings.vim'
 alias nimp='nvim $XDG_CONFIG_HOME/dotfiles/nvim/plugins.vim'
 alias nimm='nvim $XDG_CONFIG_HOME/dotfiles/nvim/plug-config/whichkey.vim $XDG_CONFIG_HOME/dotfiles/nvim/mappings.vim'
 alias nimt='nvim $XDG_CONFIG_HOME/dotfiles/nvim/themes.vim'
-alias cat='pygmentize -g'
-alias rgr='ranger'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false'
@@ -32,6 +29,7 @@ alias gconcu='git config --global --unset credential.helper'
 alias lzg='lazygit'
 
 # LSD
+## Obviously don't use these if not using lsd :)
 alias ls='lsd'
 alias l='ls -lah'
 alias lt='ls --tree'
@@ -83,6 +81,8 @@ alias hu='helm upgrade -i'
 alias hun='helm upgrade -i -n'
 alias hd='helm delete'
 alias hdn='helm delete -n'
+alias hh='helm history'
+alias hhn='helm history -n'
 alias hls='helm ls'
 alias hlsn='helm ls -n'
 alias hlsa='helm ls -A'
@@ -122,12 +122,19 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 alias tfwl='terraform workspace list'
 alias tfws='terraform workspace select'
-alias tfo='terraform output -json kubeconfig | jq -r .'
+alias tfo='terraform output'
+
+# Terragrunt
+alias tg='terragrunt'
+alias tgi='terragrunt init'
+alias tgp='terragrunt plan'
+alias tga='terragrunt apply'
 
 # Ansible
 alias an='ansible'
 alias ap='ansible-playbook'
 alias ag='ansible-galaxy'
+alias av='ansible-vault'
 
 # Yarn
 alias ygl='cat `yarn global dir`/package.json'
@@ -145,7 +152,7 @@ alias gwe='./gradlew eclipse'
 alias gwcee='./gradlew cleanEclipse eclipse'
 alias kill-daemons='jps | grep GradleDaemon | grep -Eo '^\d+' | xargs kill -9'
 
-# Maven
+# NiFi
 alias create-nifi-processor='mvn archetype:generate -DarchetypeGroupId=org.apache.nifi -DarchetypeArtifactId=nifi-processor-bundle-archetype -DarchetypeVersion=1.9.2 -DnifiVersion=1.9.2'
 
 # Hugo
