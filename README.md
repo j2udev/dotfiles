@@ -18,7 +18,7 @@ impacting my open source dotfiles. An example of a `$HOME/.zshrc` file for a
 work machine:
 
 ```zsh
-[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/.zshrc ]] && source $XDG_CONFIG_HOME/dotfiles/zsh/.zshrc
+[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/zshrc ]] && source $XDG_CONFIG_HOME/dotfiles/zsh/zshrc
 
 ### Exports with potentially proprietary information ###
 export FOOBAR="/foo/bar"
