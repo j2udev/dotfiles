@@ -4,21 +4,21 @@
 
 Clone this repo to your `$XDG_CONFIG_HOME` directory as it relies on that fact
 in order to source different files in `dotfiles/zsh/.zshrc`. I recommend setting
-your `$XDG_CONFIG_HOME` equal to `$HOME/.config` in order to alleviate `$HOME`
-clutter.
+your `$XDG_CONFIG_HOME` equal to `$HOME/.config` if it isn't already in order to
+alleviate `$HOME` clutter.
 
 ```zsh
 git clone https://github.com/j2udevelopment/dotfiles.git $XDG_CONFIG_HOME
 ```
 
 When using this repo on a work machine, I keep a `$HOME/.zshrc` that sources my
-`$XDG_CONFIG_HOME/dotfiles/zsh/zshrc`. This allows me to add any aliases,
-functions, exports, etc that may contain proprietary information without
-impacting my open source dotfiles. An example of a `$HOME/.zshrc` file for a
-work machine:
+`$XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/zshrc`. This allows me to add any
+aliases, functions, exports, etc that may contain proprietary information
+without impacting my open source dotfiles. An example of a `$HOME/.zshrc` file
+for a work machine:
 
 ```zsh
-[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/zshrc ]] && source $XDG_CONFIG_HOME/dotfiles/zsh/zshrc
+[[ -f $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/zshrc ]] && source $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/zshrc
 
 ### Exports with potentially proprietary information ###
 export FOOBAR="/foo/bar"
@@ -38,9 +38,10 @@ provisioning a new environment.
 Also included in this repo is a simple bash CLI, `dfm` (dotfiles manager) that I
 use to help provision new development environments... which is admittedly a
 little overkill I'll be the first to admit; however, it serves as an example of
-how to build a simple CLI with Bash. As I explore new tools, I add installation
-functions to `dfm` that I try to make compatible with Mac (what I typically use
-for native development) and Ubuntu (what I typically use for dev containers).
+how to build a bash CLI. As I explore new tools, I add installation functions to
+`dfm` that I try to make compatible with Mac (what I typically use for native
+development) and Ubuntu (what I typically use for dev containers). Full
+disclosure... it's rough around the edges so use at your own risk!
 
 ## [Docker Dotfiles](https://hub.docker.com/repository/docker/j2udevelopment/dev-env)
 

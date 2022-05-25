@@ -4,7 +4,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Source zsh dotfiles
-[[ -f $XDG_CONFIG_HOME/dotfiles/zsh/zshrc ]] && . $XDG_CONFIG_HOME/dotfiles/zsh/zshrc
+[[ -f $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/zshrc ]] && . $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/zshrc
 
 
 # Set name of the theme to load --- if set to "random", it will
