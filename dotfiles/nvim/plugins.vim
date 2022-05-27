@@ -1,17 +1,10 @@
-" if empty(glob('$HOME/.config/nvim/plugged'))
-"   silent !curl -fLo $XDG_CONFIG_HOME/dotfiles/nvim/autoload/plug.vim --create-dirs
-"     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
-
-if empty(glob('$HOME/.config/nvim/plugged'))
-  silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
+if empty(glob('$XDG_CONFIG_HOME/nvim/plugged'))
+  silent !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" call plug#begin('$HOME/.config/nvim/plugged')
-call plug#begin('$HOME/.config/nvim')
+call plug#begin('$XDG_CONFIG_HOME/nvim/plugged')
 " Good support (and tabbing) for (),{},[], etc
 Plug 'jiangmiao/auto-pairs'
 " Conquer of Completion

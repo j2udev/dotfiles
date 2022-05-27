@@ -35,7 +35,8 @@ let g:which_key_map['r'] = [ ':FloatermNew ranger'                             ,
 let g:which_key_map['q'] = [ ':wincmd q'                                       , 'quit window' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split vertical']
-let g:which_key_map['w'] = [ ':StripWhitespace'                                , 'strip whitespace']
+let g:which_key_map['w'] = [ ':w'                                              , 'write']
+let g:which_key_map['W'] = [ ':StripWhitespace'                                , 'strip whitespace']
 let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " b is for buffer
