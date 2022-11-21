@@ -1,0 +1,77 @@
+format = """
+[](wvu_blue)\
+$username\
+[](bg:leidos_light_purple fg:wvu_blue)\
+$directory\
+[](bg:leaf_green fg:leidos_light_purple)\
+$git_branch\
+$git_status\
+[](bg:k8s_blue fg:leaf_green)\
+$kubernetes\
+[](bg:aws_blue fg:k8s_blue)\
+$aws\
+[](fg:aws_blue)\
+$fill\
+$cmd_duration $jobs $time
+"""
+
+palette = "personal"
+
+[palettes.personal]
+wvu_blue = "#0C2D50"
+wvu_gold = "#E7AC0E"
+leidos_light_purple = "#851189"
+leidos_dark_purple = "#12024E"
+leidos_white = "#FFFFFF"
+leaf_green = "#00887B"
+leaf_white = "#F7F6F7"
+k8s_blue = "#1C49A7"
+k8s_white = "#F2F3F3"
+docker_blue = "#0496F5"
+docker_teal = "#05ADD5"
+aws_blue = "#052738"
+aws_orange = "#F79601"
+
+[fill]
+symbol = " "
+
+[username]
+show_always = true
+style_user = "bg:wvu_blue fg:wvu_gold"
+style_root = "bg:wvu_blue fg:wvu_gold"
+format = '[  $user ]($style)'
+
+[directory]
+style = "bg:leidos_light_purple fg:leidos_white"
+format = "[ $path ]($style)"
+truncation_length = 4
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:leaf_green fg:leaf_white"
+format = '[ $symbol $branch ]($style)'
+truncation_length = 30
+
+[git_status]
+style = "bg:leaf_green fg:leaf_white"
+format = '[$all_status$ahead_behind ]($style)'
+
+[kubernetes]
+disabled = false
+symbol = "ﴱ"
+style = "bg:k8s_blue fg:k8s_white"
+format = '[ $symbol $context $namespace ]($style)'
+
+[aws]
+disabled = false
+symbol = ""
+style = "bg:aws_blue fg:aws_orange"
+format = '[ $symbol $profile $region ]($style)'
