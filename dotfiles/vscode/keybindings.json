@@ -1,0 +1,91 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "workbench.action.toggleEditorWidths",
+        "when": "editorFocus"
+    },
+    {
+        "key": "tab",
+        "command": "-markdown.extension.onTabKey",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible && editorLangId == 'markdown'"
+    },
+    {
+        "key": "shift+tab",
+        "command": "-markdown.extension.onShiftTabKey",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !suggestWidgetVisible && editorLangId == 'markdown'"
+    },
+    {
+      "key": "cmd+[",
+      "command": "workbench.action.navigateBack",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "cmd+]",
+      "command": "workbench.action.navigateForward",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "cmd+n",
+      "command": "explorer.newFile"
+    },
+    {
+      "key": "shift+cmd+n",
+      "command": "explorer.newFolder"
+    },
+    {
+      "key": "cmd+b",
+      "command": "-markdown.extension.editing.toggleBold",
+      "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+    },
+    {
+      "key": "shift+cmd+enter",
+      "command": "-editor.action.insertLineBefore",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "shift+cmd+enter",
+      "command": "-notebook.cell.insertCodeCellAbove",
+      "when": "notebookCellListFocused && !inputFocus"
+    },
+    {
+      "key": "shift+cmd+enter",
+      "command": "-list.toggleSelection",
+      "when": "listFocus && !inputFocus"
+    },
+    {
+      "key": "shift+cmd+enter",
+      "command": "-search.action.replaceAllInFile",
+      "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+      "key": "shift+cmd+enter",
+      "command": "-search.action.replaceAllInFolder",
+      "when": "folderMatchFocus && replaceActive && searchViewletVisible"
+    }
+]
