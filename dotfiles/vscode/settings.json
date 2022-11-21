@@ -140,12 +140,28 @@
           "commands": ["workbench.view.scm"]
       },
       {
+          "before": ["<leader>", "h"],
+          "commands": ["workbench.action.moveEditorToLeftGroup"]
+      },
+      {
+          "before": ["<leader>", "l"],
+          "commands": ["workbench.action.moveEditorToRightGroup"]
+      },
+      {
+          "before": ["<leader>", "j"],
+          "commands": ["workbench.action.moveEditorToBelowGroup"]
+      },
+      {
+          "before": ["<leader>", "k"],
+          "commands": ["workbench.action.moveEditorToAboveGroup"]
+      },
+      {
           "before": ["<leader>", "m"],
-          "commands": ["editor.action.toggleMinimap"]
+          "commands": ["workbench.action.toggleEditorWidths"]
       },
       {
           "before": ["<leader>", "M"],
-          "commands": ["workbench.action.toggleEditorWidths"]
+          "commands": ["editor.action.toggleMinimap"]
       },
       {
           "before": ["<leader>", "p"],
@@ -274,10 +290,16 @@
                   "command": "workbench.action.showAllEditors"
               },
               {
-                  "key": "d",
+                  "key": "c",
                   "name": "Close active editor",
                   "type": "command",
                   "command": "workbench.action.closeActiveEditor"
+              },
+              {
+                  "key": "C",
+                  "name": "Close other editors",
+                  "type": "command",
+                  "command": "workbench.action.closeOtherEditors"
               },
               {
                   "key": "h",
@@ -305,12 +327,6 @@
               },
               {
                   "key": "m",
-                  "name": "Close other editors",
-                  "type": "command",
-                  "command": "workbench.action.closeOtherEditors"
-              },
-              {
-                  "key": "M",
                   "name": "Toggle max editor group",
                   "type": "command",
                   "command": "workbench.action.toggleEditorWidths"
@@ -1025,15 +1041,15 @@
       },
       {
           "key": "m",
-          "name": "$(file-media) Minimap",
-          "type": "command",
-          "command": "editor.action.toggleMinimap"
-      },
-      {
-          "key": "M",
           "name": "Maximize Editor Group (toggle)",
           "type": "bindings",
           "command": "workbench.action.toggleEditorWidths"
+      },
+      {
+          "key": "M",
+          "name": "$(file-media) Minimap",
+          "type": "command",
+          "command": "editor.action.toggleMinimap"
       },
       {
           "key": "p",
@@ -1423,6 +1439,7 @@
   "liveshare.languages.allowGuestCommandControl": true,
   "synthwave84.brightness": 1,
   "workbench.colorTheme": "Bearded Theme Vivid Black",
-  "files.enableTrash": false
+  "files.enableTrash": false,
+  "editor.minimap.enabled": false
 }
 
