@@ -291,9 +291,9 @@
               },
               {
                   "key": "c",
-                  "name": "Close active editor",
+                  "name": "Close editor group",
                   "type": "command",
-                  "command": "workbench.action.closeActiveEditor"
+                  "command": "workbench.action.closeEditorsInGroup"
               },
               {
                   "key": "C",
@@ -348,6 +348,12 @@
                   "name": "New untitled editor",
                   "type": "command",
                   "command": "workbench.action.files.newUntitledFile"
+              },
+              {
+                  "key": "q",
+                  "name": "Close active editor",
+                  "type": "command",
+                  "command": "workbench.action.closeActiveEditor"
               },
               {
                   "key": "u",
@@ -1440,6 +1446,7 @@
   "synthwave84.brightness": 1,
   "workbench.colorTheme": "Bearded Theme Vivid Black",
   "files.enableTrash": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": -1
 }
 
