@@ -15,6 +15,6 @@ plugins=(
     extract
     terraform
     fancy-ctrl-z
-    vagrant
     zsh-autosuggestions
+    poetry
 )

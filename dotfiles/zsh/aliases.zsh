@@ -20,6 +20,7 @@ alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finde
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false'
 alias genpw='openssl rand -base64 12 | pbcopy'
+alias tldrf='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
 
 # Git
 alias gcona='git config user.name "Joshua Ward" ; git config user.email "j2udevelopment@gmail.com"'
@@ -29,17 +30,17 @@ alias gconc='git config --global credential.helper cache'
 alias gconcu='git config --global --unset credential.helper'
 alias lzg='lazygit'
 
-# # LSD
-# ## Obviously don't use these if not using lsd :)
-# alias ls='lsd'
-# alias l='ls -lah'
-# alias lt='ls --tree'
-# alias lta='ls -a --tree'
+# LSD
+## Obviously don't use these if not using lsd :)
+alias ls='lsd'
+alias l='ls -lah'
+alias lt='ls --tree'
+alias lta='ls -a --tree'
 
 # Java
-alias java8='export JAVA_HOME=$JAVA_8_HOME; java -version'
-alias java11='export JAVA_HOME=$JAVA_11_HOME; java --version'
-alias java13='export JAVA_HOME=$JAVA_13_HOME; java --version'
+alias ejava8='export JAVA_HOME=$JAVA_8_HOME'
+alias ejava11='export JAVA_HOME=$JAVA_11_HOME'
+alias java8='/Library/Java/JavaVirtualMachines/jdk1.8.0_331.jdk/Contents/Home/bin/java'
 
 # Golang
 alias gorm='go run main.go'
@@ -115,6 +116,7 @@ alias dnls='docker network ls'
 alias dsp='docker system prune'
 alias dspa='docker system prune -a'
 alias dstart='docker start -ai'
+alias lzd='lazydocker'
 
 # Terraform
 alias tf='terraform'
@@ -152,6 +154,7 @@ alias gwce='./gradlew cleanEclipse'
 alias gwe='./gradlew eclipse'
 alias gwcee='./gradlew cleanEclipse eclipse'
 alias kill-daemons='jps | grep GradleDaemon | grep -Eo '^\d+' | xargs kill -9'
+alias gradle-unlock='find ~/.gradle -type f -name "*.lock" -delete'
 
 # NiFi
 alias create-nifi-processor='mvn archetype:generate -DarchetypeGroupId=org.apache.nifi -DarchetypeArtifactId=nifi-processor-bundle-archetype -DarchetypeVersion=1.9.2 -DnifiVersion=1.9.2'
@@ -179,3 +182,8 @@ alias aplay='asciinema play'
 
 # Hex Code Util
 alias hexs='xxd -psd'
+
+# Zarf
+alias ztcc='zarf tools clear-cache'
+alias zpc='ztcc && zarf package create'
+alias zpd='ztcc && zarf package deploy'
