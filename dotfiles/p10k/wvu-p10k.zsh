@@ -51,10 +51,10 @@ typeset -g awsorange='#F79601'
       # =========================[ Line #1 ]=========================
       kubecontext             # current kubernetes context (https://kubernetes.io/)
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+      # go_version              # go version (https://golang.org)
+      # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
-      go_version              # go version (https://golang.org)
-      virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       # status                  # exit code of the last command
       # terraform               # terraform workspace (https://www.terraform.io)
       # context                 # user@hostname
@@ -420,7 +420,7 @@ typeset -g awsorange='#F79601'
   typeset -g POWERLEVEL9K_TERRAFORM_FOREGROUND=38
   # Custom icon.
   # typeset -g POWERLEVEL9K_TERRAFORM_VISUAL_IDENTIFIER_EXPANSION='⭐'
- 
+
   ################[ aws: aws profile and region #################
 
   #[ aws: aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) ]#

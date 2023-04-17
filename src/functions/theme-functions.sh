@@ -4,9 +4,9 @@
 # shellcheck source=/dev/null
 . "$DFM_SRC"/variables/theme-variables.sh
 
-themeSpring() {
-  printStatus "Setting Spring Theme..." --status info
-  ln -fs "$DFM_THEME_DIR/spring-p10k.zsh" "$HOME/.p10k.zsh"
+themeMinimal() {
+  printStatus "Setting Minimal Theme..." --status info
+  ln -fs "$DFM_THEME_DIR/minimal-p10k.zsh" "$HOME/.p10k.zsh"
 }
 
 themeUSA() {

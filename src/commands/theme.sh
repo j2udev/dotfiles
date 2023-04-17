@@ -25,7 +25,7 @@ list_options() {
 Options:
   usa                               Set a USA theme
   wvu                               Set a West Virginia University theme
-  spring                            Set a spring-green theme
+  minimal                           Set a minimal theme
 "
 }
 
@@ -40,8 +40,8 @@ while [ "$#" -gt 0 ]; do
       list_options
       exit 1
       ;;
-    spring)
-      export DFM_THEME_SPRING=true
+    minimal)
+      export DFM_THEME_MINIMAL=true
       shift
       ;;
     usa)
@@ -61,8 +61,8 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
-if "$DFM_THEME_SPRING" ; then
-  themeSpring
+if "$DFM_THEME_MINIMAL" ; then
+  themeMinimal
 fi
 if "$DFM_THEME_USA" ; then
   themeUSA

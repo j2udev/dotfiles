@@ -11,11 +11,10 @@ alias dime='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/exports.zsh'
 alias dimf='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/functions.zsh'
 alias dimp='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/plugins.zsh'
 alias dimm='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/zsh/misc.zsh'
-alias nim='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/init.vim'
-alias nims='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/settings.vim'
-alias nimp='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/plugins.vim'
-alias nimm='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/plug-config/whichkey.vim $XDG_CONFIG_HOME/dotfiles/nvim/mappings.vim'
-alias nimt='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/themes.vim'
+alias nim='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/init.lua'
+alias nims='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/lua/config/options.lua'
+alias nimp='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/lua/plugins'
+alias nimm='nvim $XDG_CONFIG_HOME/dotfiles/dotfiles/nvim/lua/config/keymaps.lua'
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder'
 alias vsc-keyrepeat='defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false'
@@ -30,12 +29,12 @@ alias gconc='git config --global credential.helper cache'
 alias gconcu='git config --global --unset credential.helper'
 alias lzg='lazygit'
 
-# LSD
-## Obviously don't use these if not using lsd :)
-alias ls='lsd'
-alias l='ls -lah'
-alias lt='ls --tree'
-alias lta='ls -a --tree'
+# exa
+## Obviously don't use these if not using exa :)
+alias ls='exa --icons'
+alias l='exa --icons -lah'
+alias lt='exa --tree'
+alias lta='exa -a --tree'
 
 # Java
 alias ejava8='export JAVA_HOME=$JAVA_8_HOME'
@@ -187,3 +186,9 @@ alias hexs='xxd -psd'
 alias ztcc='zarf tools clear-cache'
 alias zpc='ztcc && zarf package create'
 alias zpd='ztcc && zarf package deploy'
+
+# Zellij
+alias za='zellij attach'
+alias zs='zellij -s'
+alias zls='zellij list-sessions'
+

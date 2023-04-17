@@ -1,7 +1,7 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 
 theme "tokyo-night-dark"
-default_layout "default" //compact, default, or a custom layout name
+default_layout "compact" //compact, default, or a custom layout name
 pane_frames false
 copy_command "pbcopy"
 

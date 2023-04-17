@@ -45,6 +45,8 @@ disclosure... it's rough around the edges so use at your own risk!
 
 ## [Docker Dotfiles](https://hub.docker.com/repository/docker/j2udevelopment/dev-env)
 
+> Note: This is currently outdated, use at you own risk!
+
 I have also containerized this setup so that it can be run anywhere. The only
 pre-requisite would be installing Nerd Fonts (or a similar font package) as
 detailed below. Depending on your environment and terminal of choice, that step
@@ -92,6 +94,17 @@ configuration wizard.
 p10k configure
 ```
 
+A couple of my p10k themes 👇
+
+[WVU](dotfiles/p10k/wvu-p10k.zsh) ![wvu-p10k](assets/wvu-p10k.png)
+
+[USA](dotfiles/p10k/usa-p10k.zsh) ![usa-p10k](assets/usa-p10k.png)
+
+I have also tried [Starship](https://starship.rs/), but found it to be less
+performant. Nonetheless, I have a
+[custom theme](dotfiles/starship/starship.toml) that should serve as a good
+example if you're looking to try it for yourself.
+
 ## [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
 In order to use the custom symbols and command prompt from my themes, you'll
@@ -115,12 +128,16 @@ p10k configure
 If you choose this option, the `MesloLGS NF` should be automatically selected
 from the font dropdown. Either of the above font packages will work well.
 
+I've recently started using [JetBrainsMono](https://www.jetbrains.com/lp/mono/)
+as well which also has a
+[Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip).
+
 ## [Neovim](https://neovim.io/)
 
-TODO: Recently, Neovim has changed to have better Lua support and native
-[LSP](https://neovim.io/doc/user/lsp.html). I am currently reworking my Neovim
-configuration, but will likely be taking a look at
-[Lunar Vim](https://github.com/LunarVim/LunarVim) for inspiration.
+I'm using [LazyVim](https://www.lazyvim.org/) as my (mostly) pre-configured
+Neovim setup.
+
+![lazyvim](assets/lazyvim.png)
 
 ## [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -160,8 +177,16 @@ directly.
 FZF is an awesome command line fuzzy finder that can be using in a variety of
 ways. I most often use it for searching my command history with `ctrl` + `r` and
 for recursive file searching with `ctrl` + `t`, but you can use it for so much
-more. You can pipe any command with output to FZF.
+more. You can pipe any command with output to FZF. I don't actually have any
+custom config for this one, but it's so useful I thought it deserved a shoutout.
 
 ```zsh
 dfm install fzf
 ```
+
+## [Zellij](https://zellij.dev/)
+
+Zellij is a terminal workspace/multiplexer that's a little easier to get going
+with than Tmux (IMHO). I've completely remapped its keybinds in
+[my config](dotfiles/zellij/config.kdl) as the default keybinds were getting in
+the way of my Neovim keybinds.
