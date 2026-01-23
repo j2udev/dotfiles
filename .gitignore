@@ -1,2 +1,4 @@
-.DS_STORE
-.vagrant
+.DS_Store
+.zsh_history
+*.zwc
+.netrwhist
