@@ -13,40 +13,40 @@ gui:
   statusPanelView: allBranchesLog
   nerdFontsVersion: "3"
   showFileIcons: true
+  # Theme colors (db2)
+  branchColors:
+    "bugfix": "#E35F6A"
+    "chore": "#A8C5D6"
+    "docs": "#98C379"
+    "feat": "#4A90C8"
+    "feature": "#4A90C8"
+    "fix": "#E35F6A"
+  theme:
+    activeBorderColor:
+      - "#E8C468"
+      - "bold"
+    cherryPickedCommitBgColor:
+      - "#1E3A52"
+    cherryPickedCommitFgColor:
+      - "#4A90C8"
+    defaultFgColor:
+      - "#FFFFFF"
+    inactiveBorderColor:
+      - "#4A90C8"
+    markedBaseCommitBgColor:
+      - "#3D3420"
+    markedBaseCommitFgColor:
+      - "#E8C468"
+    optionsTextColor:
+      - "#A8C5D6"
+    searchingActiveBorderColor:
+      - "#E8C468"
+      - "bold"
+    selectedLineBgColor:
+      - "#2D3139"
+    unstagedChangesColor:
+      - "#E35F6A"
 git:
   pagers:
     - colorArg: always
       pager: delta --dark --paging=never
-  # Theme colors (db2)
-branchColors:
-  "bugfix": "#E35F6A"
-  "chore": "#A8C5D6"
-  "docs": "#98C379"
-  "feat": "#4A90C8"
-  "feature": "#4A90C8"
-  "fix": "#E35F6A"
-theme:
-  activeBorderColor:
-    - "#E8C468"
-    - "bold"
-  cherryPickedCommitBgColor:
-    - "#1E3A52"
-  cherryPickedCommitFgColor:
-    - "#4A90C8"
-  defaultFgColor:
-    - "#FFFFFF"
-  inactiveBorderColor:
-    - "#4A90C8"
-  markedBaseCommitBgColor:
-    - "#3D3420"
-  markedBaseCommitFgColor:
-    - "#E8C468"
-  optionsTextColor:
-    - "#A8C5D6"
-  searchingActiveBorderColor:
-    - "#E8C468"
-    - "bold"
-  selectedLineBgColor:
-    - "#2D3139"
-  unstagedChangesColor:
-    - "#E35F6A"
