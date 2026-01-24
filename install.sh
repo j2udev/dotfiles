@@ -46,7 +46,7 @@ link "$DOTFILES_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
 # eza theme
 if [[ -d "$SCRIPT_DIR/dotfiles/eza" ]]; then
     mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/eza"
-    link "$DOTFILES_DIR/dotfiles/eza/themes/db2.yaml" "${XDG_CONFIG_HOME:-$HOME/.config}/eza/theme.yaml"
+    link "$DOTFILES_DIR/dotfiles/eza/themes/db2-dark.yaml" "${XDG_CONFIG_HOME:-$HOME/.config}/eza/theme.yaml"
 fi
 
 # neovim config
@@ -58,6 +58,16 @@ fi
 if [[ -f "$SCRIPT_DIR/dotfiles/lazygit/config.yml" ]]; then
     mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
     link "$DOTFILES_DIR/dotfiles/lazygit/config.yml" "${XDG_CONFIG_HOME:-$HOME/.config}/lazygit/config.yml"
+fi
+
+# bat themes
+if [[ -d "$SCRIPT_DIR/dotfiles/bat/themes" ]] && command -v bat &> /dev/null; then
+    BAT_CONFIG_DIR="$(bat --config-dir)"
+    mkdir -p "$BAT_CONFIG_DIR/themes"
+    for theme in "$SCRIPT_DIR/dotfiles/bat/themes"/*.tmTheme; do
+        [[ -f "$theme" ]] && cp "$theme" "$BAT_CONFIG_DIR/themes/"
+    done
+    bat cache --build > /dev/null 2>&1 && info "Built bat theme cache"
 fi
 
 info "Dotfiles installation complete!"

@@ -1,6 +1,16 @@
 {
   "name": "Dotfiles",
-  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/ubuntu-toolbox:0.1.2",
+  // "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/ubuntu-toolbox:0.1.2",
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/ubuntu-devbox:0.1.6",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dotfiles.repository": "j2udev/dotfiles",
+        "dotfiles.targetPath": "~/.config/dotfiles",
+        "dotfiles.installCommand": "install.sh"
+      }
+    }
+  },
   "features": {
     "ghcr.io/devopsbuildingblocks/devcontainer-features/claude:0": {}
   }
