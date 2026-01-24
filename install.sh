@@ -46,7 +46,7 @@ link "$DOTFILES_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
 # eza theme
 if [[ -d "$SCRIPT_DIR/dotfiles/eza" ]]; then
     mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/eza"
-    link "$DOTFILES_DIR/dotfiles/eza/themes/db2-dark.yaml" "${XDG_CONFIG_HOME:-$HOME/.config}/eza/theme.yaml"
+    link "$DOTFILES_DIR/dotfiles/eza/themes/db2.yaml" "${XDG_CONFIG_HOME:-$HOME/.config}/eza/theme.yml"
 fi
 
 # neovim config
