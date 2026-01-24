@@ -1,0 +1,14 @@
+# onedark theme for fzf
+fg:#61afef
+bg:-1
+hl:#e5c07b
+fg+:#282c34
+bg+:#e5c07b
+hl+:#e06c75
+info:#e06c75
+prompt:#e5c07b
+pointer:#e06c75
+marker:#98c379
+spinner:#e06c75
+header:#e5c07b
+border:#61afef

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+# lazygit config - tokyonight theme
+
+disableStartupPopups: true
+promptToReturnFromSubprocess: false
+update:
+  method: never
+gui:
+  showRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+  showPanelJumps: true
+  skipRewordInEditorWarning: true
+  expandFocusedSidePanel: true
+  statusPanelView: allBranchesLog
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  branchColors:
+    "bugfix": "#f7768e"
+    "chore": "#565f89"
+    "docs": "#9ece6a"
+    "feat": "#7aa2f7"
+    "feature": "#7aa2f7"
+    "fix": "#f7768e"
+  theme:
+    activeBorderColor:
+      - "#e0af68"
+      - "bold"
+    cherryPickedCommitBgColor:
+      - "#33467c"
+    cherryPickedCommitFgColor:
+      - "#7aa2f7"
+    defaultFgColor:
+      - "#c0caf5"
+    inactiveBorderColor:
+      - "#7aa2f7"
+    markedBaseCommitBgColor:
+      - "#292e42"
+    markedBaseCommitFgColor:
+      - "#e0af68"
+    optionsTextColor:
+      - "#565f89"
+    searchingActiveBorderColor:
+      - "#e0af68"
+      - "bold"
+    selectedLineBgColor:
+      - "#292e42"
+    unstagedChangesColor:
+      - "#f7768e"
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never

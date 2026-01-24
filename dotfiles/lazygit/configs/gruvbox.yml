@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+# lazygit config - gruvbox theme
+
+disableStartupPopups: true
+promptToReturnFromSubprocess: false
+update:
+  method: never
+gui:
+  showRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+  showPanelJumps: true
+  skipRewordInEditorWarning: true
+  expandFocusedSidePanel: true
+  statusPanelView: allBranchesLog
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  branchColors:
+    "bugfix": "#fb4934"
+    "chore": "#928374"
+    "docs": "#b8bb26"
+    "feat": "#83a598"
+    "feature": "#83a598"
+    "fix": "#fb4934"
+  theme:
+    activeBorderColor:
+      - "#fabd2f"
+      - "bold"
+    cherryPickedCommitBgColor:
+      - "#504945"
+    cherryPickedCommitFgColor:
+      - "#83a598"
+    defaultFgColor:
+      - "#ebdbb2"
+    inactiveBorderColor:
+      - "#83a598"
+    markedBaseCommitBgColor:
+      - "#3c3836"
+    markedBaseCommitFgColor:
+      - "#fabd2f"
+    optionsTextColor:
+      - "#928374"
+    searchingActiveBorderColor:
+      - "#fabd2f"
+      - "bold"
+    selectedLineBgColor:
+      - "#3c3836"
+    unstagedChangesColor:
+      - "#fb4934"
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never

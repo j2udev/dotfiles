@@ -51,22 +51,14 @@ else
     info "Dotfiles source already present in $HOME/.zshrc"
 fi
 
-# Link tool configs that need to live in specific locations
-# eza theme
-if [[ -d "$SCRIPT_DIR/dotfiles/eza" ]]; then
-    mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/eza"
-    link "$DOTFILES_DIR/dotfiles/eza/themes/db2.yaml" "${XDG_CONFIG_HOME:-$HOME/.config}/eza/theme.yml"
-fi
-
-# neovim config
+# Link neovim config (required for neovim to find config)
 if [[ -d "$SCRIPT_DIR/dotfiles/neovim" ]]; then
     link "$DOTFILES_DIR/dotfiles/neovim" "${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 fi
 
-# lazygit config
-if [[ -f "$SCRIPT_DIR/dotfiles/lazygit/config.yml" ]]; then
-    mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
-    link "$DOTFILES_DIR/dotfiles/lazygit/config.yml" "${XDG_CONFIG_HOME:-$HOME/.config}/lazygit/config.yml"
-fi
-
 info "Dotfiles installation complete!"
+info ""
+info "To change the theme, set DOTFILES_THEME in your environment:"
+info "  export DOTFILES_THEME=nord  # Options: tokyonight, nord, gruvbox, onedark, catppuccin, db2"
+info ""
+info "Then start a new shell or run: source ~/.zshrc"

@@ -1,0 +1,14 @@
+# catppuccin-mocha theme for fzf
+fg:#89b4fa
+bg:-1
+hl:#f9e2af
+fg+:#1e1e2e
+bg+:#f9e2af
+hl+:#f38ba8
+info:#f38ba8
+prompt:#f9e2af
+pointer:#f38ba8
+marker:#a6e3a1
+spinner:#f38ba8
+header:#f9e2af
+border:#89b4fa

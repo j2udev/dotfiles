@@ -1,0 +1,14 @@
+# nord theme for fzf
+fg:#81a1c1
+bg:-1
+hl:#ebcb8b
+fg+:#2e3440
+bg+:#ebcb8b
+hl+:#bf616a
+info:#bf616a
+prompt:#ebcb8b
+pointer:#bf616a
+marker:#a3be8c
+spinner:#bf616a
+header:#ebcb8b
+border:#81a1c1

@@ -9,9 +9,9 @@
         {
           "type": "status",
           "style": "plain",
-          "foreground": "#98C379",
+          "foreground": "#98c379",
           "foreground_templates": [
-            "{{ if .Error }}#E35F6A{{ end }}"
+            "{{ if .Error }}#e06c75{{ end }}"
           ],
           "template": "\u279c",
           "properties": {
@@ -21,7 +21,7 @@
         {
           "type": "path",
           "style": "plain",
-          "foreground": "#E8C468",
+          "foreground": "#e5c07b",
           "template": " {{ .Path }} ",
           "properties": {
             "style": "folder"
@@ -30,8 +30,8 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "#E35F6A",
-          "template": "<#4A90C8>git:(</>{{ .HEAD }}<#4A90C8>)</>",
+          "foreground": "#e06c75",
+          "template": "<#61afef>git:(</>{{ .HEAD }}<#61afef>)</>",
           "properties": {
             "branch_icon": ""
           }

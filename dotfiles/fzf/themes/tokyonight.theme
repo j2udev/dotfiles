@@ -1,0 +1,14 @@
+# tokyonight theme for fzf
+fg:#7aa2f7
+bg:-1
+hl:#e0af68
+fg+:#1a1b26
+bg+:#e0af68
+hl+:#f7768e
+info:#f7768e
+prompt:#e0af68
+pointer:#f7768e
+marker:#9ece6a
+spinner:#f7768e
+header:#e0af68
+border:#7aa2f7

@@ -1,4 +1,6 @@
-# yaml-language-server: \$schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+# lazygit config - nord theme
+
 disableStartupPopups: true
 promptToReturnFromSubprocess: false
 update:
@@ -13,39 +15,38 @@ gui:
   statusPanelView: allBranchesLog
   nerdFontsVersion: "3"
   showFileIcons: true
-  # Theme colors (db2)
   branchColors:
-    "bugfix": "#E35F6A"
-    "chore": "#A8C5D6"
-    "docs": "#98C379"
-    "feat": "#4A90C8"
-    "feature": "#4A90C8"
-    "fix": "#E35F6A"
+    "bugfix": "#bf616a"
+    "chore": "#616e88"
+    "docs": "#a3be8c"
+    "feat": "#81a1c1"
+    "feature": "#81a1c1"
+    "fix": "#bf616a"
   theme:
     activeBorderColor:
-      - "#E8C468"
+      - "#ebcb8b"
       - "bold"
     cherryPickedCommitBgColor:
-      - "#1E3A52"
+      - "#434c5e"
     cherryPickedCommitFgColor:
-      - "#4A90C8"
+      - "#81a1c1"
     defaultFgColor:
-      - "#FFFFFF"
+      - "#eceff4"
     inactiveBorderColor:
-      - "#4A90C8"
+      - "#81a1c1"
     markedBaseCommitBgColor:
-      - "#3D3420"
+      - "#3b4252"
     markedBaseCommitFgColor:
-      - "#E8C468"
+      - "#ebcb8b"
     optionsTextColor:
-      - "#A8C5D6"
+      - "#616e88"
     searchingActiveBorderColor:
-      - "#E8C468"
+      - "#ebcb8b"
       - "bold"
     selectedLineBgColor:
-      - "#2D3139"
+      - "#3b4252"
     unstagedChangesColor:
-      - "#E35F6A"
+      - "#bf616a"
 git:
   pagers:
     - colorArg: always

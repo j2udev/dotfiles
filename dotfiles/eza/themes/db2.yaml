@@ -1,7 +1,4 @@
-# db2-dark theme for eza
-# Based on DevOpsBuildingBlocks oh-my-posh theme colors
-# Red #E35F6A, Yellow #E8C468, Blue #4A90C8, Green #98C379
-
+# db2 (DevOpsBuildingBlocks) theme for eza
 colourful: true
 
 filekinds:

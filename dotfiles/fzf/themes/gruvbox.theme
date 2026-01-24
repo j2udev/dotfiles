@@ -1,0 +1,14 @@
+# gruvbox theme for fzf
+fg:#83a598
+bg:-1
+hl:#fabd2f
+fg+:#282828
+bg+:#fabd2f
+hl+:#fb4934
+info:#fb4934
+prompt:#fabd2f
+pointer:#fb4934
+marker:#b8bb26
+spinner:#fb4934
+header:#fabd2f
+border:#83a598

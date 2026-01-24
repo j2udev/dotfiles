@@ -1,7 +1,4 @@
-# db2-dark theme for fzf
-# Colors from DevOpsBuildingBlocks oh-my-posh theme
-# Red #E35F6A, Blue #4A90C8, Yellow #E8C468, Green #98C379
-
+# db2 (DevOpsBuildingBlocks) theme for fzf
 fg:#4A90C8
 bg:-1
 hl:#E8C468

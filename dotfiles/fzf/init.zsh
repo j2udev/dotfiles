@@ -9,16 +9,24 @@ if command -v fzf &> /dev/null; then
         export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
     fi
 
-    # Load theme (db2 by default)
-    FZF_THEME="${FZF_THEME:-db2}"
-    FZF_THEME_FILE="${DOTFILES}/fzf/themes/${FZF_THEME}.theme"
-    if [[ -f "$FZF_THEME_FILE" ]]; then
-        # Convert theme file to FZF_DEFAULT_OPTS format
-        FZF_COLORS=$(grep -v '^#' "$FZF_THEME_FILE" | grep -v '^$' | tr '\n' ',' | sed 's/,$//')
+    # Load theme based on DOTFILES_THEME
+    _fzf_theme="${DOTFILES_THEME:-tokyonight}"
+    _fzf_theme_file="${DOTFILES}/fzf/themes/${_fzf_theme}.theme"
+
+    # Fallback to tokyonight if theme file doesn't exist
+    if [[ ! -f "$_fzf_theme_file" ]]; then
+        _fzf_theme_file="${DOTFILES}/fzf/themes/tokyonight.theme"
+    fi
+
+    if [[ -f "$_fzf_theme_file" ]]; then
+        # Parse theme file into FZF color options
+        FZF_COLORS=$(grep -v '^#' "$_fzf_theme_file" | grep -v '^$' | tr '\n' ',' | sed 's/,$//')
         export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=$FZF_COLORS"
     else
         export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
     fi
+
+    unset _fzf_theme _fzf_theme_file
 
     # Set up Ctrl+T preview (uses bat if available)
     if command -v bat &> /dev/null; then

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/tags/v26.23.6/themes/schema.json",
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 3,
   "blocks": [
     {
@@ -9,9 +9,9 @@
         {
           "type": "status",
           "style": "plain",
-          "foreground": "#98C379",
+          "foreground": "#9ece6a",
           "foreground_templates": [
-            "{{ if .Error }}#E35F6A{{ end }}"
+            "{{ if .Error }}#f7768e{{ end }}"
           ],
           "template": "\u279c",
           "properties": {
@@ -21,7 +21,7 @@
         {
           "type": "path",
           "style": "plain",
-          "foreground": "#E8C468",
+          "foreground": "#e0af68",
           "template": " {{ .Path }} ",
           "properties": {
             "style": "folder"
@@ -30,8 +30,8 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "#E35F6A",
-          "template": "<#4A90C8>git:(</>{{ .HEAD }}<#4A90C8>)</>",
+          "foreground": "#f7768e",
+          "template": "<#7aa2f7>git:(</>{{ .HEAD }}<#7aa2f7>)</>",
           "properties": {
             "branch_icon": ""
           }

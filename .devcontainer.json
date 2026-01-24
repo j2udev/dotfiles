@@ -6,8 +6,7 @@
     "vscode": {
       "settings": {
         "dotfiles.repository": "j2udev/dotfiles",
-        "dotfiles.targetPath": "~/.config/dotfiles",
-        "dotfiles.installCommand": "install.sh"
+        "dotfiles.targetPath": "~/.config/dotfiles"
       }
     }
   },
