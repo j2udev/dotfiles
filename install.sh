@@ -39,8 +39,17 @@ if [[ "$SCRIPT_DIR" != "$DOTFILES_DIR" ]]; then
     link "$SCRIPT_DIR" "$DOTFILES_DIR"
 fi
 
-# Link .zshrc to home directory
-link "$DOTFILES_DIR/dotfiles/zsh/.zshrc" "$HOME/.zshrc"
+# Source our zshrc from ~/.zshrc (append if not already present)
+ZSHRC_SOURCE="source \"$DOTFILES_DIR/dotfiles/zsh/.zshrc\""
+if [[ ! -f "$HOME/.zshrc" ]]; then
+    echo "$ZSHRC_SOURCE" > "$HOME/.zshrc"
+    info "Created $HOME/.zshrc with dotfiles source"
+elif ! grep -qF "$ZSHRC_SOURCE" "$HOME/.zshrc"; then
+    echo "$ZSHRC_SOURCE" >> "$HOME/.zshrc"
+    info "Appended dotfiles source to $HOME/.zshrc"
+else
+    info "Dotfiles source already present in $HOME/.zshrc"
+fi
 
 # Link tool configs that need to live in specific locations
 # eza theme
