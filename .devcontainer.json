@@ -10,6 +10,9 @@
       }
     }
   },
+  "remoteEnv": {
+    "DOTFILES_THEME": "db2"
+  },
   "features": {
     "ghcr.io/devopsbuildingblocks/devcontainer-features/claude:0": {}
   }
