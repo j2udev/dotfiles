@@ -60,14 +60,4 @@ if [[ -f "$SCRIPT_DIR/dotfiles/lazygit/config.yml" ]]; then
     link "$DOTFILES_DIR/dotfiles/lazygit/config.yml" "${XDG_CONFIG_HOME:-$HOME/.config}/lazygit/config.yml"
 fi
 
-# bat themes
-if [[ -d "$SCRIPT_DIR/dotfiles/bat/themes" ]] && command -v bat &> /dev/null; then
-    BAT_CONFIG_DIR="$(bat --config-dir)"
-    mkdir -p "$BAT_CONFIG_DIR/themes"
-    for theme in "$SCRIPT_DIR/dotfiles/bat/themes"/*.tmTheme; do
-        [[ -f "$theme" ]] && cp "$theme" "$BAT_CONFIG_DIR/themes/"
-    done
-    bat cache --build > /dev/null 2>&1 && info "Built bat theme cache"
-fi
-
 info "Dotfiles installation complete!"
