@@ -7,7 +7,12 @@
     "eza@latest",
     "lazygit@latest",
     "bat@latest",
-    "delta@latest"
+    "delta@latest",
+    "kind@latest",
+    "kubernetes-helm@latest",
+    "gh@latest",
+    "k9s@latest",
+    "kubectl@latest"
   ],
   "shell": {
     "init_hook": [
