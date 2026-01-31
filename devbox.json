@@ -12,7 +12,9 @@
     "kubernetes-helm@latest",
     "gh@latest",
     "k9s@latest",
-    "kubectl@latest"
+    "kubectl@latest",
+    "fd@latest",
+    "ripgrep@latest"
   ],
   "shell": {
     "init_hook": [
