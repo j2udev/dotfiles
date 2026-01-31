@@ -1,0 +1,119 @@
+---
+# -----------------------------------------------------------------------------
+# Tokyo Night Skin for K9s
+# Based on the Tokyo Night color palette
+# https://github.com/folke/tokyonight.nvim
+# -----------------------------------------------------------------------------
+
+# Styles...
+foreground: &foreground "#c0caf5"
+background: &background "#1a1b26"
+black: &black "#15161e"
+blue: &blue "#7aa2f7"
+cyan: &cyan "#7dcfff"
+green: &green "#9ece6a"
+magenta: &magenta "#bb9af7"
+orange: &orange "#ff9e64"
+red: &red "#f7768e"
+yellow: &yellow "#e0af68"
+comment: &comment "#565f89"
+selection: &selection "#33467c"
+dark_bg: &dark_bg "#16161e"
+
+# Skin...
+k9s:
+  body:
+    fgColor: *foreground
+    bgColor: *background
+    logoColor: *blue
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *orange
+  info:
+    fgColor: *cyan
+    sectionColor: *foreground
+  help:
+    fgColor: *foreground
+    bgColor: *background
+    keyColor: *yellow
+    numKeyColor: *blue
+    sectionColor: *magenta
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *black
+    buttonBgColor: *blue
+    buttonFocusFgColor: *black
+    buttonFocusBgColor: *cyan
+    labelFgColor: *orange
+    fieldFgColor: *foreground
+  frame:
+    border:
+      fgColor: *blue
+      focusColor: *cyan
+    menu:
+      fgColor: *foreground
+      keyColor: *yellow
+      numKeyColor: *yellow
+    crumbs:
+      fgColor: *black
+      bgColor: *blue
+      activeColor: *cyan
+    status:
+      newColor: *cyan
+      modifyColor: *blue
+      addColor: *green
+      pendingColor: *orange
+      errorColor: *red
+      highlightColor: *yellow
+      killColor: *magenta
+      completedColor: *comment
+    title:
+      fgColor: *foreground
+      bgColor: *background
+      highlightColor: *cyan
+      counterColor: *magenta
+      filterColor: *blue
+  views:
+    charts:
+      bgColor: *background
+      defaultDialColors:
+        - *blue
+        - *red
+      defaultChartColors:
+        - *blue
+        - *red
+    table:
+      fgColor: *foreground
+      bgColor: *background
+      cursorFgColor: *black
+      cursorBgColor: *blue
+      markColor: *yellow
+      header:
+        fgColor: *cyan
+        bgColor: *background
+        sorterColor: *orange
+    xray:
+      fgColor: *foreground
+      bgColor: *background
+      cursorColor: *selection
+      graphicColor: *blue
+      showIcons: false
+    yaml:
+      keyColor: *cyan
+      colonColor: *comment
+      valueColor: *foreground
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *foreground
+        bgColor: *background
+        toggleOnColor: *green
+        toggleOffColor: *comment
+    help:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *blue

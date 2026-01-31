@@ -1,0 +1,132 @@
+---
+# -----------------------------------------------------------------------------
+# DB2 Dark Skin for K9s
+# DevOpsBuildingBlocks custom theme based on db2 color palette
+# -----------------------------------------------------------------------------
+
+# Styles...
+foreground: &foreground "#FFFFFF"
+background: &background "#1E2127"
+current_line: &current_line "#2D3139"
+selection: &selection "#3E4451"
+comment: &comment "#A8C5D6"
+cyan: &cyan "#56B6C2"
+green: &green "#98C379"
+orange: &orange "#D19A66"
+blue: &blue "#4A90C8"
+magenta: &magenta "#C678DD"
+red: &red "#E35F6A"
+yellow: &yellow "#E8C468"
+
+# Skin...
+k9s:
+  # General K9s styles
+  body:
+    fgColor: *foreground
+    bgColor: *background
+    logoColor: *red
+  # Command prompt styles
+  prompt:
+    fgColor: *foreground
+    bgColor: *background
+    suggestColor: *yellow
+    border:
+      command: *green
+      default: *green
+  # ClusterInfoView styles.
+  info:
+    fgColor: *blue
+    sectionColor: *foreground
+  # Help view styles.
+  help:
+    fgColor: *foreground
+    bgColor: *background
+    keyColor: *blue
+    numKeyColor: *blue
+    sectionColor: *yellow
+  # Dialog styles.
+  dialog:
+    fgColor: *foreground
+    bgColor: *background
+    buttonFgColor: *foreground
+    buttonBgColor: *blue
+    buttonFocusFgColor: *background
+    buttonFocusBgColor: *yellow
+    labelFgColor: *orange
+    fieldFgColor: *foreground
+  frame:
+    # Borders styles.
+    border:
+      fgColor: *red
+      focusColor: *red
+    menu:
+      fgColor: *foreground
+      keyColor: *yellow
+      # Used for favorite namespaces
+      numKeyColor: *blue
+    # CrumbView attributes for history navigation.
+    crumbs:
+      fgColor: *foreground
+      bgColor: *current_line
+      activeColor: *blue
+    # Resource status and update styles
+    status:
+      newColor: *blue
+      modifyColor: *cyan
+      addColor: *blue
+      pendingColor: *orange
+      errorColor: *red
+      highlightColor: *yellow
+      killColor: *magenta
+      completedColor: *comment
+    # Border title styles.
+    title:
+      fgColor: *foreground
+      bgColor: *current_line
+      highlightColor: *yellow
+      counterColor: *blue
+      filterColor: *green
+  views:
+    # Charts skins...
+    charts:
+      bgColor: *background
+      defaultDialColors:
+        - *blue
+        - *red
+      defaultChartColors:
+        - *blue
+        - *red
+    # TableView attributes.
+    table:
+      fgColor: *foreground
+      bgColor: *background
+      cursorFgColor: *background
+      cursorBgColor: *blue
+      markColor: *yellow
+      # Header row styles.
+      header:
+        # fgColor: *comment
+        fgColor: *yellow
+        bgColor: *background
+        sorterColor: *green
+    # Xray view attributes.
+    xray:
+      fgColor: *foreground
+      bgColor: *background
+      cursorColor: *current_line
+      graphicColor: *blue
+      showIcons: false
+    # YAML info styles.
+    yaml:
+      keyColor: *blue
+      colonColor: *comment
+      valueColor: *foreground
+    # Logs styles.
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *foreground
+        bgColor: *background
+        toggleOnColor: *green
+        toggleOffColor: *comment
